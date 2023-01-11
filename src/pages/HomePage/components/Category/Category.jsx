@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Category.css";
-import machine from "../../assets/img/machine.png";
+import machine from "../../../../assets/img/machine.png";
 import HorizontalScroll from "react-scroll-horizontal";
-import sement from "./sement.png";
-import scroll from "../../assets/img/scroll.jpg";
+import sement from "../../../../assets/img/sement.png";
+import scroll from "../../../../assets/img/scroll.jpg";
 
 const Category = () => {
   return (

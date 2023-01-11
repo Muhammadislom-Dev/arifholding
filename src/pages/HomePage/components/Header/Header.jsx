@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./Header.css";
-import holcim from "../../assets/img/holcim.png";
-import Modal from "../../pages/Modal/Modal";
-import close from "../../assets/img/+.png";
-import call from "../../assets/img/call.png";
+import Modal from '../../../ReactModal/components/Modal/Modal'
+import holcim from "../../../../assets/img/holcim.png";
+import close from "../../../../assets/img/+.png";
+import call from "../../../../assets/img/call.png";
 
 const Header = () => {
   const [connection, setConnection] = useState(false);
@@ -22,7 +22,9 @@ const Header = () => {
         </p>
         <div className="header-title">
           <button className="header-btn">Batafsil</button>
-          <button onClick={handleConnection} className="header-btn">
+          <button 
+          onClick={handleConnection} 
+          className="header-btn">
             Богланиш
           </button>
         </div>
