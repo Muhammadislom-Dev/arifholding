@@ -19,6 +19,7 @@
     "react-owl-carousel": "^2.3.3",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "react-scroll-horizontal": "^1.6.6",
     "react-scroll-trigger": "^0.6.14",
     "react-slick": "^0.29.0",
     "react-step-progress-bar": "^1.0.3",
