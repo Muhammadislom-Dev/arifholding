@@ -2,8 +2,10 @@ import React from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import arif from "../../assets/img/arif.svg";
+import Languages from "../Language/Language";
 
 const Navbar = () => {
+  
   return (
     <div className="navbar">
       <div className="container">
@@ -56,6 +58,7 @@ const Navbar = () => {
             </Link>
           </li>
         </ul>
+        <Languages />
       </div>
     </div>
   );

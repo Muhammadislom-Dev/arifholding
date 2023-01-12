@@ -9,6 +9,11 @@
   justify-content: space-between;
 }
 
+.navbar .container{
+  display: flex;
+  align-items: center;
+}
+
 .navbar-item {
   margin: 0 10px;
 }

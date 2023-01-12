@@ -5,7 +5,7 @@ import "@splidejs/splide/dist/css/splide.min.css";
 import machine from "../../../../assets/img/machine.png";
 import img1 from "../../../../assets/img/img5.png";
 import close from "../../../../assets/img/+.png";
-// import BuyModal from "../../../../pages/BuyModal/BuyModal";
+import BuyModal from "../../../ReactModal/components/BuyModal/BuyModal";
 
 const Aside = () => {
 
@@ -80,7 +80,7 @@ const Aside = () => {
             ))}
           </Splide>
           <button 
-        //   onClick={handleBuy} 
+          onClick={handleBuy} 
           className="aside-button">
             Sotib olish
           </button>
@@ -106,7 +106,7 @@ const Aside = () => {
         </div>
       </div>
 
-      {/* <BuyModal showbuy={buy}>
+      <BuyModal showbuy={buy}>
         <button onClick={() => setBuy()} className="aside-modal-close">
           <img src={close} alt="" className="aside-modal-img" />
         </button>
@@ -144,7 +144,7 @@ const Aside = () => {
             </div>
           </form>
         </div>
-      </BuyModal> */}
+      </BuyModal>
     </>
   );
 };

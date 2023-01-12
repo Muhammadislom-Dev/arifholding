@@ -1,0 +1,25 @@
+.language {
+  display: flex;
+  align-items: center;
+  margin-left: 40px;
+  margin-top: 0;
+}
+
+.language p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  font-size: 20px;
+  text-transform: capitalize;
+  border-radius: 20px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.active {
+  background-color: #132e85;
+  color: #fff;
+}
