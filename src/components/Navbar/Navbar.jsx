@@ -58,7 +58,6 @@ const Navbar = () => {
             </Link>
           </li>
         </ul>
-        <Languages />
       </div>
     </div>
   );

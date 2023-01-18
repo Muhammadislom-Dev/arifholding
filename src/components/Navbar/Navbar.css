@@ -9,10 +9,11 @@
   justify-content: space-between;
 }
 
-.navbar .container{
+/* .navbar .container{
   display: flex;
   align-items: center;
-}
+  justify-content: baseline;
+} */
 
 .navbar-item {
   margin: 0 10px;

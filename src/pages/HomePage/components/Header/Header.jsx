@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import "./Header.css";
-import Modal from '../../../ReactModal/components/Modal/Modal'
+import Modal from "../../../ReactModal/components/Modal/Modal";
 import holcim from "../../../../assets/img/holcim.png";
 import close from "../../../../assets/img/+.png";
 import call from "../../../../assets/img/call.png";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper";
 
 const Header = () => {
   const [connection, setConnection] = useState(false);
@@ -14,7 +18,7 @@ const Header = () => {
 
   return (
     <div className="header">
-      <div className="container">
+      {/* <div className="container">
         <h2 className="header-name">Semento цемент ишлаб чикариш корхонаси</h2>
         <p className="header-text">
           It doesn’t matter that much to show a really good UI, excellent
@@ -22,9 +26,7 @@ const Header = () => {
         </p>
         <div className="header-title">
           <button className="header-btn">Batafsil</button>
-          <button 
-          onClick={handleConnection} 
-          className="header-btn">
+          <button onClick={handleConnection} className="header-btn">
             Богланиш
           </button>
         </div>
@@ -38,8 +40,96 @@ const Header = () => {
             </a>
           </p>
         </div>
-      </div>
+      </div> */}
+      <Swiper
+        pagination={{
+          dynamicBullets: true,
+        }}
+        modules={[Pagination]}
+        className="mySwiper"
+      >
+        <SwiperSlide>
+          <div className="container">
+            <h2 className="header-name">
+              Semento цемент ишлаб чикариш корхонаси
+            </h2>
+            <p className="header-text">
+              It doesn’t matter that much to show a really good UI, excellent
+              animated interactions or a complex IA{" "}
+            </p>
+            <div className="header-title">
+              <button className="header-btn">Batafsil</button>
+              <button onClick={handleConnection} className="header-btn">
+                Богланиш
+              </button>
+            </div>
 
+            <div className="header-list">
+              <img src={holcim} alt="" className="header-img" />
+              <p className="header-span">
+                Semento цементлари хакида{" "}
+                <a href="#" className="header-link">
+                  батафсил танишиш
+                </a>
+              </p>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="container">
+            <h2 className="header-name">
+              Semento цемент ишлаб чикариш корхонаси
+            </h2>
+            <p className="header-text">
+              It doesn’t matter that much to show a really good UI, excellent
+              animated interactions or a complex IA{" "}
+            </p>
+            <div className="header-title">
+              <button className="header-btn">Batafsil</button>
+              <button onClick={handleConnection} className="header-btn">
+                Богланиш
+              </button>
+            </div>
+
+            <div className="header-list">
+              <img src={holcim} alt="" className="header-img" />
+              <p className="header-span">
+                Semento цементлари хакида{" "}
+                <a href="#" className="header-link">
+                  батафсил танишиш
+                </a>
+              </p>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="container">
+            <h2 className="header-name">
+              Semento цемент ишлаб чикариш корхонаси
+            </h2>
+            <p className="header-text">
+              It doesn’t matter that much to show a really good UI, excellent
+              animated interactions or a complex IA{" "}
+            </p>
+            <div className="header-title">
+              <button className="header-btn">Batafsil</button>
+              <button onClick={handleConnection} className="header-btn">
+                Богланиш
+              </button>
+            </div>
+
+            <div className="header-list">
+              <img src={holcim} alt="" className="header-img" />
+              <p className="header-span">
+                Semento цементлари хакида{" "}
+                <a href="#" className="header-link">
+                  батафсил танишиш
+                </a>
+              </p>
+            </div>
+          </div>
+        </SwiperSlide>
+      </Swiper>
       <Modal show={connection}>
         <button onClick={() => setConnection()} className="header-close">
           <img src={close} alt="" />

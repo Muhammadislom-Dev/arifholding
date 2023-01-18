@@ -8,8 +8,6 @@ import close from "../../../../assets/img/+.png";
 import BuyModal from "../../../ReactModal/components/BuyModal/BuyModal";
 
 const Aside = () => {
-
-
   const information = [
     {
       id: 1,
@@ -79,9 +77,7 @@ const Aside = () => {
               </SplideSlide>
             ))}
           </Splide>
-          <button 
-          onClick={handleBuy} 
-          className="aside-button">
+          <button onClick={handleBuy} className="aside-button">
             Sotib olish
           </button>
         </div>
