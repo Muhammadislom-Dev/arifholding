@@ -18,7 +18,11 @@ const About = () => {
           Stretch plyonkasini ishlab chiqarish linyasi Stretch plyonkasini
           ishlab chiqarish linyasi,
         </p>
-        <Link to="/" className="about-btn">
+        <Link
+          onClick={() => window.scrollTo({ top: 0 })}
+          to="/meeting"
+          className="about-btn"
+        >
           Батафсил окиш
         </Link>
       </div>

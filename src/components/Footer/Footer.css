@@ -110,10 +110,6 @@
   margin: 0 10px;
 }
 
-.footer-logo {
-  transition: 0.5s;
-}
-
-.footer-logo:hover {
-  transform: scale(1.5);
+.footer-links svg path {
+  fill: red;
 }

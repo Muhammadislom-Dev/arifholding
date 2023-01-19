@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Meeting.css";
 import arrow from "../../../../assets/img/row.png";
 import { Link } from "react-router-dom";
@@ -8,6 +8,9 @@ import meetings from "../../../../assets/img/meetings.png";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
+import VideoModal from "../../../ReactModal/components/VideoModal/VideoModal";
+import { IoCloseOutline } from "react-icons/io5";
+import Person from "../Person/Person";
 
 const Meeting = () => {
   const options = {
@@ -32,6 +35,12 @@ const Meeting = () => {
       },
     },
   };
+
+  const [videoModal, setVideoModal] = useState(false);
+
+  function handleVideoModal() {
+    setVideoModal(!videoModal);
+  }
 
   return (
     <>
@@ -62,7 +71,7 @@ const Meeting = () => {
             </p>
             <div className="meeting-left">
               <img src={meeting} alt="" className="meeting-icon" />
-              <button className="meeting-button">
+              <button onClick={handleVideoModal} className="meeting-button">
                 <img src={play} alt="" className="meeting-icon" />
                 <span className="meeting-span">Батафсил видео</span>
               </button>
@@ -80,6 +89,7 @@ const Meeting = () => {
         </div>
       </div>
 
+      <Person />
       <div className="meeting-box">
         <OwlCarousel {...options}>
           <div className="meeting-list">
@@ -87,6 +97,26 @@ const Meeting = () => {
           </div>
         </OwlCarousel>
       </div>
+
+      <VideoModal show={videoModal}>
+        <div>
+          <div className="content-modal-item">
+            <button onClick={() => setVideoModal()} className="close-modal">
+              <IoCloseOutline style={{ marginLeft: "-3px" }} />
+            </button>
+          </div>
+          <iframe
+            width="100%"
+            height="460px"
+            src="https://www.youtube.com/embed/egLiAz2dtUo"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            className="content-video-modal"
+          ></iframe>
+        </div>
+      </VideoModal>
     </>
   );
 };

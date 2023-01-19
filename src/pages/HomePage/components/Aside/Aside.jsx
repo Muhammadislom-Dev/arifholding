@@ -29,6 +29,16 @@ const Aside = () => {
       title: "Бепул ремонт хизмати",
       text: "Founded in 1909 in the Port of Antwerp, Ahlers operates in 3 regions (Europe, CIS, Asia) helping customers to drive future growth",
     },
+    {
+      id: 5,
+      title: "Бепул ремонт хизмати",
+      text: "Founded in 1909 in the Port of Antwerp, Ahlers operates in 3 regions (Europe, CIS, Asia) helping customers to drive future growth",
+    },
+    {
+      id: 6,
+      title: "Бепул ремонт хизмати",
+      text: "Founded in 1909 in the Port of Antwerp, Ahlers operates in 3 regions (Europe, CIS, Asia) helping customers to drive future growth",
+    },
   ];
 
   const [activeNumIdx, setActiveNumIdx] = useState(1);

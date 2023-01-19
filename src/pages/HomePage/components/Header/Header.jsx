@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [connection, setConnection] = useState(false);
@@ -18,29 +19,6 @@ const Header = () => {
 
   return (
     <div className="header">
-      {/* <div className="container">
-        <h2 className="header-name">Semento цемент ишлаб чикариш корхонаси</h2>
-        <p className="header-text">
-          It doesn’t matter that much to show a really good UI, excellent
-          animated interactions or a complex IA{" "}
-        </p>
-        <div className="header-title">
-          <button className="header-btn">Batafsil</button>
-          <button onClick={handleConnection} className="header-btn">
-            Богланиш
-          </button>
-        </div>
-
-        <div className="header-list">
-          <img src={holcim} alt="" className="header-img" />
-          <p className="header-span">
-            Semento цементлари хакида{" "}
-            <a href="#" className="header-link">
-              батафсил танишиш
-            </a>
-          </p>
-        </div>
-      </div> */}
       <Swiper
         pagination={{
           dynamicBullets: true,
@@ -58,7 +36,9 @@ const Header = () => {
               animated interactions or a complex IA{" "}
             </p>
             <div className="header-title">
-              <button className="header-btn">Batafsil</button>
+              <Link to="/enterprice" className="header-links">
+                Батафсил
+              </Link>
               <button onClick={handleConnection} className="header-btn">
                 Богланиш
               </button>
@@ -68,9 +48,9 @@ const Header = () => {
               <img src={holcim} alt="" className="header-img" />
               <p className="header-span">
                 Semento цементлари хакида{" "}
-                <a href="#" className="header-link">
+                <Link to="/enterprice" className="header-link">
                   батафсил танишиш
-                </a>
+                </Link>
               </p>
             </div>
           </div>
@@ -85,7 +65,9 @@ const Header = () => {
               animated interactions or a complex IA{" "}
             </p>
             <div className="header-title">
-              <button className="header-btn">Batafsil</button>
+              <Link to="/enterprice" className="header-links">
+                Батафсил
+              </Link>
               <button onClick={handleConnection} className="header-btn">
                 Богланиш
               </button>
@@ -95,9 +77,9 @@ const Header = () => {
               <img src={holcim} alt="" className="header-img" />
               <p className="header-span">
                 Semento цементлари хакида{" "}
-                <a href="#" className="header-link">
+                <Link to="/enterprice" className="header-link">
                   батафсил танишиш
-                </a>
+                </Link>
               </p>
             </div>
           </div>
@@ -112,7 +94,9 @@ const Header = () => {
               animated interactions or a complex IA{" "}
             </p>
             <div className="header-title">
-              <button className="header-btn">Batafsil</button>
+              <Link to="/enterprice" className="header-links">
+                Батафсил
+              </Link>
               <button onClick={handleConnection} className="header-btn">
                 Богланиш
               </button>
@@ -122,9 +106,9 @@ const Header = () => {
               <img src={holcim} alt="" className="header-img" />
               <p className="header-span">
                 Semento цементлари хакида{" "}
-                <a href="#" className="header-link">
+                <Link to="/enterprice" className="header-link">
                   батафсил танишиш
-                </a>
+                </Link>
               </p>
             </div>
           </div>

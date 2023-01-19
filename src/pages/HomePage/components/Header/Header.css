@@ -41,7 +41,31 @@
 }
 
 .header-btn:hover {
-  background-color: rgb(15, 14, 14);
+  background-color: #fff;
+  color: #46526b;
+}
+
+.header .swiper .swiper-pagination-bullet-active {
+  background-color: #fff;
+}
+
+.header-links {
+  color: #ffffff;
+  font-family: "SF Pro";
+  font-style: normal;
+  font-weight: 510;
+  font-size: 14.7105px;
+  line-height: 136.6%;
+  background-color: transparent;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  padding: 11px 35px;
+  transition: 0.5s;
+}
+
+.header-links:hover {
+  color: #46526b;
+  background-color: #fff;
 }
 
 .header-btn:last-child {

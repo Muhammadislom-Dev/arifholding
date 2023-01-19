@@ -25,7 +25,7 @@ const Category = () => {
               <Link
                 onClick={() => window.scrollTo({ top: 0 })}
                 className="category-link"
-                to="/"
+                to="/enterprice"
               >
                 Батафсил били
               </Link>
@@ -51,7 +51,7 @@ const Category = () => {
               <Link
                 onClick={() => window.scrollTo({ top: 0 })}
                 className="category-link"
-                to="/"
+                to="/enterprice"
               >
                 Батафсил били
               </Link>
@@ -77,7 +77,7 @@ const Category = () => {
               <Link
                 onClick={() => window.scrollTo({ top: 0 })}
                 className="category-link"
-                to="/"
+                to="/enterprice"
               >
                 Батафсил били
               </Link>
@@ -103,7 +103,7 @@ const Category = () => {
               <Link
                 onClick={() => window.scrollTo({ top: 0 })}
                 className="category-link"
-                to="/"
+                to="/enterprice"
               >
                 Батафсил били
               </Link>

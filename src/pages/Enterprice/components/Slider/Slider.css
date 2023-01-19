@@ -1,0 +1,58 @@
+.slick-item {
+  background-color: #e0cfaa;
+  box-shadow: 0px 3.50542px 52.5813px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  width: 270px;
+  height: 380px;
+  margin: 15px;
+}
+
+.slick-name {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 20px;
+  color: #000000;
+  padding: 20px 15px;
+  text-align: center;
+}
+
+.slick-text {
+  font-family: "SF Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14.0217px;
+  line-height: 20px;
+  color: #000000;
+  margin-top: 30px;
+  width: 180px;
+  margin-left: 25px;
+}
+
+.slick-img {
+  width: 250px;
+  object-fit: cover;
+  margin-top: 30px;
+}
+
+.slick-list {
+  display: flex;
+  align-items: center;
+}
+
+.slick {
+  background: #fce8bd;
+  padding: 50px 0;
+  margin-top: -10px;
+}
+
+.slick-names {
+  font-family: "SF Pro";
+  font-style: normal;
+  font-weight: 590;
+  font-size: 30px;
+  line-height: 136.6%;
+  color: #000000;
+  margin-left: 15px;
+}

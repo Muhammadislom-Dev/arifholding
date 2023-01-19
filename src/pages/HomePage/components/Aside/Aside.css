@@ -130,11 +130,14 @@
 
 .aside-left {
   width: 40%;
+  border-radius: 8px;
 }
 
 .aside-right {
-  width: 50%;
-  margin: 0 330px;
+  width: 57%;
+  margin: 0 250px;
+  height: 600px;
+  overflow-y: scroll;
 }
 
 .numbers-closer {

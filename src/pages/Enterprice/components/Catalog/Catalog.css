@@ -1,39 +1,6 @@
 .catalog {
-  background-color: #fce8bd;
-  padding: 30px 80px;
-  overflow: hidden;
-  position: relative;
-}
-
-.catalog .container {
-  position: relative;
-  z-index: 1;
-}
-
-.catalog-names {
-  font-family: "SF Pro";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 21.8405px;
-  line-height: 27px;
-  text-align: center;
-  letter-spacing: -0.01em;
-  color: #fce8bd;
-  margin-bottom: 0;
-}
-
-.catalog-title {
-  display: flex;
-  position: relative;
-  gap: 34px;
-  transition: 1s;
-  left: 10%;
-}
-
-.catalog-page {
-  margin: 100px auto 60px;
-  position: relative;
-  width: 675px;
+  background: #fce8bd;
+  padding: 50px 0;
 }
 
 .catalog-name {
@@ -41,51 +8,49 @@
   font-style: normal;
   font-weight: 590;
   font-size: 32px;
+  line-height: 38px;
+  color: #222936;
+}
+
+.catalog-subtext {
+  display: flex;
+  align-items: center;
+}
+
+.catalog-home {
+  font-family: "SF Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.catalog span {
+  margin-left: 0;
+}
+
+.catalog-text {
+  font-family: "SF Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
   line-height: 32px;
   color: #222936;
-  text-align: center;
+  width: 1000px;
 }
 
-.catalog-list {
-  background-color: #222936;
-  border-radius: 26.7825px;
-  min-width: 230px;
-  text-align: center;
-  min-height: 302.05px;
+.catalog-subname {
+  font-family: "SF Pro";
+  font-style: normal;
+  font-weight: 590;
+  font-size: 32px;
+  line-height: 32px;
+  color: #222936;
+  margin-top: 50px;
 }
 
-.catalog-img {
-  margin-top: 65px;
-}
 
-.homeproducts__pagination {
-  position: absolute;
-  bottom: -40px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  top: 120%;
-  gap: 20px;
-}
-
-.homeproducts__pagination-btn {
-  width: 12px;
-  height: 12px;
-  background: #fff;
-  border-radius: 50%;
-  opacity: 0.5;
-  transition: 0.4s;
-  border: none;
-  cursor: pointer;
-}
-
-.homeproducts__pagination-btn:hover {
-  opacity: 1;
-}
-
-.homeproducts__pagination-btn.active {
-  width: 24px;
-  height: 10px;
-  border-radius: 20px;
-  opacity: 1;
+.catalog-imgs{
+    width: 100%;
 }

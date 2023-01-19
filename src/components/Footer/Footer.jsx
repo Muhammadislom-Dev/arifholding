@@ -1,10 +1,10 @@
 import React from "react";
 import "./Footer.css";
 import arif from "../../assets/img/arif.png";
-import instagram from "../../assets/img/instagram.png";
-import twitter from "../../assets/img/twitter.png";
-import facebook from "../../assets/img/facebook.png";
-import github from "../../assets/img/github.png";
+import instagram from "../../assets/icons/instagram.svg";
+import twitter from "../../assets/icons/twitter.svg";
+import facebook from "../../assets/icons/facebook.svg";
+import github from "../../assets/icons/github.svg";
 
 const Footer = () => {
   return (
@@ -23,27 +23,27 @@ const Footer = () => {
             </p>
             <ul className="footer-lists">
               <li className="footer-items">
-                <a href="#" className="footer-links">
+                <a href="https://www.instagram.com" className="footer-links">
                   <img src={instagram} alt="" className="footer-logo" />
                 </a>
               </li>
               <li className="footer-items">
-                <a href="#" className="footer-links">
+                <a href="https://www.twitter.com" className="footer-links">
                   <img src={twitter} alt="" className="footer-logo" />
                 </a>
               </li>
               <li className="footer-items">
-                <a href="#" className="footer-links">
+                <a href="https://www.facebook.com" className="footer-links">
                   <img src={facebook} alt="" className="footer-logo" />
                 </a>
               </li>
               <li className="footer-items">
-                <a href="#" className="footer-links">
+                <a href="https://www.github.com" className="footer-links">
                   <img src={github} alt="" className="footer-logo" />
                 </a>
               </li>
               <li className="footer-items">
-                <a href="#" className="footer-links">
+                <a href="https://www.instagram.com" className="footer-links">
                   <img src={instagram} alt="" className="footer-logo" />
                 </a>
               </li>

@@ -5,7 +5,6 @@ import arif from "../../assets/img/arif.svg";
 import Languages from "../Language/Language";
 
 const Navbar = () => {
-  
   return (
     <div className="navbar">
       <div className="container">
@@ -35,12 +34,8 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="navbar-item">
-            <Link
-              onClick={() => window.scrollTo({ top: 6750 })}
-              className="navbar-link navbar-links"
-              to="/"
-            >
-              Aloqa
+            <Link className="navbar-link navbar-links" to="/">
+              Afzalliklarimiz
             </Link>
           </li>
           <li className="navbar-item">
@@ -53,8 +48,12 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="navbar-item">
-            <Link className="navbar-link navbar-links" to="/">
-              Afzalliklarimiz
+            <Link
+              onClick={() => window.scrollTo({ top: 6750 })}
+              className="navbar-link navbar-links"
+              to="/"
+            >
+              Aloqa
             </Link>
           </li>
         </ul>
