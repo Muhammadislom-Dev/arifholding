@@ -84,11 +84,13 @@
   line-height: 136.6%;
   border: 2px solid #fff;
   border-radius: 28.5152px;
+  padding: 8.1472px 21.5319px;
   width: 174.98px;
   height: 36px;
   background-color: transparent;
   color: #fff;
   transition: 0.5s;
+  cursor: pointer;
 }
 
 .aside-button:hover {
@@ -249,7 +251,7 @@
   transition: 0.5s;
 }
 
-.aside-form-submit:hover{
+.aside-form-submit:hover {
   background-color: transparent;
   color: #222936;
 }
@@ -271,7 +273,7 @@
   cursor: pointer;
 }
 
-.aside-form-call:hover{
+.aside-form-call:hover {
   background-color: #222936;
   color: #fff;
   border: 2px solid #222936;

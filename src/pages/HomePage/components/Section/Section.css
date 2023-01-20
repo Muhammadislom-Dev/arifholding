@@ -90,6 +90,11 @@ span {
   line-height: 16px;
   color: #377de7;
   text-decoration-line: underline;
+  transition: 0.5s;
+}
+
+.section-link:hover {
+  color: #000;
 }
 
 .section-title {
@@ -98,6 +103,17 @@ span {
   width: 237.64px;
   height: 224.68px;
   margin: 0 8px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.section-title:hover {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
 }
 
 .section-subname {

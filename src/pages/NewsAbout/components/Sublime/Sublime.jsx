@@ -1,7 +1,6 @@
 import React from "react";
 import "./Sublime.css";
 import download from "../../../../assets/img/download.png";
-import time from "../../../../assets/img/Vector (67).png";
 import busines from "../../../../assets/img/busines.png";
 import dot from "../../../../assets/img/div.png";
 
@@ -14,9 +13,6 @@ const Sublime = () => {
             <h2 className="sublime-name">
               Iran protests: 'No going back' as unrest hits 100 days
             </h2>
-            <p className="sublime-subname">
-              <img src={time} alt="" className="sublime-icon" /> 4 hours ago
-            </p>
             <div className="sublime-title">
               <button className="sublime-btn">
                 <img src={download} alt="" className="sublime-logo" />

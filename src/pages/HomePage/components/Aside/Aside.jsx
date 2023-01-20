@@ -6,6 +6,7 @@ import machine from "../../../../assets/img/machine.png";
 import img1 from "../../../../assets/img/img5.png";
 import close from "../../../../assets/img/+.png";
 import BuyModal from "../../../ReactModal/components/BuyModal/BuyModal";
+import ModalSucces from "../../../ReactModal/components/ModalSucces/ModalSucces";
 
 const Aside = () => {
   const information = [
@@ -58,6 +59,73 @@ const Aside = () => {
   function handleBuy() {
     setBuy(!buy);
   }
+
+  const [greatModal, setGreatModal] = useState(false);
+
+  function openGreatModal() {
+    setGreatModal(!greatModal);
+  }
+
+  const formBtn = (e) => {
+    e.preventDefault();
+    if (e.target[0].value.length > 0 && e.target[1].value.length > 0) {
+      let botMessege = `
+                     Salom, Yangi Xabar!😊%0A
+                     Ismi 👤: ${e.target[0].value}%0A
+                     Raqam ☎: ${e.target[1].value}%0A 
+                     Sizning xabaringiz  📝: ${e.target[2].value}%0A 
+                `;
+
+      let url = `https://api.telegram.org/bot5861028519:AAEojIy3EZeId4cR6f3ob2QYFkubcnsYRjY/sendMessage?chat_id=-1001699557669&text=${botMessege}`;
+      async function fetchAsync(url) {
+        let response = await fetch(url);
+        let data = await response.json();
+        return data;
+      }
+      fetchAsync(url);
+
+      if (document.querySelector("#name").matches(".input-error")) {
+        document.querySelector("#name").classList.remove("input-error");
+        document.querySelector("#errorText").classList.remove("error-text1");
+        document.querySelector("#closestBtn").classList.remove("close1-btn");
+        document.querySelector("#closestBtn1").classList.remove("closes-btn1");
+      }
+      if (document.querySelector("#tel").matches(".tel-error")) {
+        document.querySelector("#tel").classList.remove("tel-error");
+        document.querySelector("#errorTel").classList.remove("error-tel1");
+        document
+          .querySelector("#closestBtn")
+          .classList.remove("modal-closest-btn");
+        document.querySelector("#closestBtn").classList.remove("close1-btn");
+        document.querySelector("#closestBtn1").classList.remove("closes-btn1");
+      }
+
+      e.target[0].value = "";
+
+      e.target[1].value = "";
+
+      e.target[2].value = "";
+
+      openGreatModal();
+    } else {
+      if (e.target[0].value.length < 1) {
+        document.querySelector("#name").classList.add("input-error");
+        document.querySelector("#errorText").classList.add("error-text1");
+
+        document.querySelector("#closestBtn").classList.add("close1-btn");
+        document.querySelector("#closestBtn1").classList.add("close2-btn");
+      }
+      if (e.target[1].value.length < 1) {
+        document.querySelector("#tel").classList.add("tel-error");
+        document.querySelector("#errorTel").classList.add("error-tel1");
+        document
+          .querySelector("#closestBtn")
+          .classList.add("modal-closest-btn");
+        document.querySelector("#closestBtn").classList.add("close1-btn");
+        document.querySelector("#closestBtn1").classList.add("close2-btn");
+      }
+    }
+  };
 
   return (
     <>
@@ -123,7 +191,7 @@ const Aside = () => {
           <p className="aside-modal-text">
             Shaxsiy ma`lumotlaringiz anonimlig ta`minlanadi
           </p>
-          <form action="" className="aside-form">
+          <form onSubmit={formBtn} action="" className="aside-form">
             <input
               type="name"
               name="name"
@@ -142,15 +210,34 @@ const Aside = () => {
               className="aside-textarea"
               name="tel"
               id="tel"
+              required
               placeholder="Sotib olmoqchi bo’lgan mahsulotingiz haqida"
             />
             <div className="aside-form-title">
-              <button className="aside-form-submit">Yuborish</button>
+              <button type="submit" className="aside-form-submit">
+                Yuborish
+              </button>
               <button className="aside-form-call">Biz bilan aloqa</button>
             </div>
           </form>
         </div>
       </BuyModal>
+
+      <ModalSucces shows={greatModal}>
+        <button onClick={() => setGreatModal()} className="form-close">
+          <img src={close} className="form-img" alt="" />
+        </button>
+        <h3 className="form-modal-name">Murojaatingiz qabul qilindi!</h3>
+        <div className="form-modal-title">
+          <a
+            href="/"
+            onClick={() => window.scrollTo({ top: 0 })}
+            className="form-modal-link"
+          >
+            Ok
+          </a>
+        </div>
+      </ModalSucces>
     </>
   );
 };

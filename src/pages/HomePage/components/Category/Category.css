@@ -6,6 +6,7 @@
 
 .category .container {
   overflow-x: scroll;
+  width: 1540px;
 }
 
 .category-name {
@@ -50,7 +51,7 @@
 
 .category-texts {
   margin-top: 210px;
-  margin-left: 100px;
+  margin-left: 270px;
   display: flex;
   align-items: center;
 }
@@ -58,6 +59,7 @@
 .category-page {
   display: flex;
   width: 100vw;
+  justify-content: center;
 }
 
 .category-right {

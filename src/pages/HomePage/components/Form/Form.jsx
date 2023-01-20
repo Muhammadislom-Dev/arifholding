@@ -3,9 +3,8 @@ import "./Form.css";
 import insta from "../../../../assets/img/insta.png";
 import telegram from "../../../../assets/img/telegram.png";
 import phone from "../../../../assets/img/phone.png";
-// import ModalSucces from "../../pages/ModalSucces/ModalSucces";
 import close from "../../../../assets/img/+.png";
-import { Link } from "react-router-dom";
+import ModalSucces from "../../../ReactModal/components/ModalSucces/ModalSucces";
 
 const Form = () => {
   const [greatModal, setGreatModal] = useState(false);
@@ -21,7 +20,7 @@ const Form = () => {
                      Salom, Yangi Xabar!😊%0A
                      Ismi 👤: ${e.target[0].value}%0A
                      Raqam ☎: ${e.target[1].value}%0A 
-                     Sizning xabaringiz  📝: ${e.target[3].value}%0A 
+                     Sizning xabaringiz  📝: ${e.target[2].value}%0A 
                 `;
 
       let url = `https://api.telegram.org/bot5861028519:AAEojIy3EZeId4cR6f3ob2QYFkubcnsYRjY/sendMessage?chat_id=-1001699557669&text=${botMessege}`;
@@ -79,9 +78,7 @@ const Form = () => {
     <div className="form">
       <div className="container">
         <h2 className="form-name">Савол, таклиф ва мурожаатлар борми?</h2>
-        <form 
-        // onSubmit={formBtn} 
-        action="" className="form-list">
+        <form onSubmit={formBtn} action="" className="form-list">
           <input
             placeholder="Ismingiz"
             type="name"
@@ -127,7 +124,7 @@ const Form = () => {
         </ul>
       </div>
 
-      {/* <ModalSucces shows={greatModal}>
+      <ModalSucces shows={greatModal}>
         <button onClick={() => setGreatModal()} className="form-close">
           <img src={close} className="form-img" alt="" />
         </button>
@@ -141,7 +138,7 @@ const Form = () => {
             Ok
           </a>
         </div>
-      </ModalSucces> */}
+      </ModalSucces>
     </div>
   );
 };

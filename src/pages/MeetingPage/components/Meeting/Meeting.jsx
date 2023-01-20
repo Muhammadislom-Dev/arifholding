@@ -105,16 +105,18 @@ const Meeting = () => {
               <IoCloseOutline style={{ marginLeft: "-3px" }} />
             </button>
           </div>
-          <iframe
-            width="100%"
-            height="460px"
-            src="https://www.youtube.com/embed/egLiAz2dtUo"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-            className="content-video-modal"
-          ></iframe>
+          {!!videoModal && (
+            <iframe
+              width="100%"
+              height="460px"
+              className="content-video-modal"
+              src="https://www.youtube.com/embed/ZM4sJ5cZdG0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          )}
         </div>
       </VideoModal>
     </>

@@ -93,9 +93,14 @@
   padding-bottom: 80px;
 }
 
-a {
+.header-link {
   color: dodgerblue;
+  transition: 0.5s;
   text-decoration: none;
+}
+
+.header-link:hover {
+  text-decoration: underline;
 }
 
 .header-modal {

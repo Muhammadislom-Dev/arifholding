@@ -4,6 +4,10 @@
   padding-bottom: 50px;
 }
 
+.person .container {
+  width: 1300px;
+}
+
 .person-name {
   font-family: "SF Pro";
   font-style: normal;
@@ -27,7 +31,17 @@
 .person-item {
   display: flex;
   align-items: center;
-  margin: 15px;
+  margin: 15px 10px;
+  width: 280px;
+  padding: 15px;
+  cursor: pointer;
+  transition: 0.5s all ease-out;
+  border-radius: 15px;
+}
+
+.person-item:hover {
+  background-color: #e3d1ac;
+  border-radius: 15px;
 }
 
 .person-items {
@@ -44,9 +58,8 @@
   color: #222936;
 }
 
-
-.person-list{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.person-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

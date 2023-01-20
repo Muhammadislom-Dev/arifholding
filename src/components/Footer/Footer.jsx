@@ -5,6 +5,7 @@ import instagram from "../../assets/icons/instagram.svg";
 import twitter from "../../assets/icons/twitter.svg";
 import facebook from "../../assets/icons/facebook.svg";
 import github from "../../assets/icons/github.svg";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -53,19 +54,23 @@ const Footer = () => {
             <h3 className="footer-name">Kompaniyamiz</h3>
             <ul className="footer--list">
               <li className="footer-item">
-                <a href="#" className="footer-link">
+                <Link to="enterprice" className="footer-link">
                   Korxonalar
-                </a>
+                </Link>
               </li>
               <li className="footer-item">
-                <a href="#" className="footer-link">
+                <Link
+                  onClick={() => window.scrollTo({ top: 2800 })}
+                  to="/"
+                  className="footer-link"
+                >
                   Biz haqimizda
-                </a>
+                </Link>
               </li>
               <li className="footer-item">
-                <a href="#" className="footer-link">
+                <Link to="/news" className="footer-link">
                   Yangiliklar
-                </a>
+                </Link>
               </li>
               <li className="footer-item">
                 <a href="#" className="footer-link">

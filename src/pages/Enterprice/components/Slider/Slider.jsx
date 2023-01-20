@@ -37,28 +37,36 @@ const SliderPage = () => {
         <div className="slick-list">
           <div className="slick-item">
             <h3 className="slick-name">Termoplastavtomat</h3>
-            <img src={machines} alt="" className="slick-img" />
+            <div className="slick-title">
+              <img src={machines} alt="" className="slick-img" />
+            </div>
             <p className="slick-text">
               Stretch plyonkasini ishlab chiqarish linyasi
             </p>
           </div>
           <div className="slick-item">
             <h3 className="slick-name">Termoplastavtomat</h3>
-            <img src={machines} alt="" className="slick-img" />
+            <div className="slick-title">
+              <img src={machines} alt="" className="slick-img" />
+            </div>
             <p className="slick-text">
               Stretch plyonkasini ishlab chiqarish linyasi
             </p>
           </div>
           <div className="slick-item">
             <h3 className="slick-name">Termoplastavtomat</h3>
-            <img src={machines} alt="" className="slick-img" />
+            <div className="slick-title">
+              <img src={machines} alt="" className="slick-img" />
+            </div>
             <p className="slick-text">
               Stretch plyonkasini ishlab chiqarish linyasi
             </p>
           </div>
           <div className="slick-item">
             <h3 className="slick-name">Termoplastavtomat</h3>
-            <img src={machines} alt="" className="slick-img" />
+            <div className="slick-title">
+              <img src={machines} alt="" className="slick-img" />
+            </div>
             <p className="slick-text">
               Stretch plyonkasini ishlab chiqarish linyasi
             </p>

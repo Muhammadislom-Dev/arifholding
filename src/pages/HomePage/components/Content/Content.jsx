@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import "./Content.css";
-import audio from "../../../../assets/img/audio.png";
-import phone from "../../../../assets/img/phone.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
 import VideoModal from "../../../ReactModal/components/VideoModal/VideoModal";
 import { IoCloseOutline } from "react-icons/io5";
+import Audio from "../../../../assets/icons/audio";
+import Phone from "../../../../assets/icons/phone";
 
 const Content = () => {
   const [videoModal, setVideoModal] = useState(false);
@@ -38,16 +38,15 @@ const Content = () => {
 
             <div className="content-list">
               <button onClick={handleVideoModal} className="content-btn">
-                <img
-                  style={{ paddingLeft: 0 }}
-                  src={audio}
-                  alt=""
-                  className="content-img"
-                />{" "}
+                <span className="content-img-span">
+                  <Audio />
+                </span>
                 <p className="content-subname">Батафсил видео</p>
               </button>
               <a href="tel:998712770707" className="content-btn">
-                <img src={phone} alt="" className="content-img" />{" "}
+                <span className="content-span-img">
+                  <Phone />
+                </span>
                 <p className="content-subname">Алокага чикиш</p>
               </a>
             </div>
@@ -66,16 +65,15 @@ const Content = () => {
 
             <div className="content-list">
               <button onClick={handleVideoModal} className="content-btn">
-                <img
-                  style={{ paddingLeft: 0 }}
-                  src={audio}
-                  alt=""
-                  className="content-img"
-                />{" "}
+                <span className="content-img-span">
+                  <Audio />
+                </span>
                 <p className="content-subname">Батафсил видео</p>
               </button>
               <a href="tel:998712770707" className="content-btn">
-                <img src={phone} alt="" className="content-img" />{" "}
+                <span className="content-span-img">
+                  <Phone />
+                </span>
                 <p className="content-subname">Алокага чикиш</p>
               </a>
             </div>
@@ -87,19 +85,21 @@ const Content = () => {
         <div>
           <div className="content-modal-item">
             <button onClick={() => setVideoModal()} className="close-modal">
-              <IoCloseOutline style={{marginLeft:"-3px"}}  />
+              <IoCloseOutline style={{ marginLeft: "-3px" }} />
             </button>
           </div>
-          <iframe
-            width="100%"
-            height="460px"
-            src="https://www.youtube.com/embed/egLiAz2dtUo"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-            className="content-video-modal"
-          ></iframe>
+          {!!videoModal && (
+            <iframe
+              width="100%"
+              height="460px"
+              className="content-video-modal"
+              src="https://www.youtube.com/embed/ZM4sJ5cZdG0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          )}
         </div>
       </VideoModal>
     </div>

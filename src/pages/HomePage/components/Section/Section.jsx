@@ -35,9 +35,9 @@ const Section = () => {
               in 3 regions (Europe, CIS, Asia) helping customers to drive future
               growth in complex{" "}
             </p>
-            <a href="#" className="section-link">
+            <Link to="/news/about" className="section-link">
               Batafsil o'qish
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -47,44 +47,68 @@ const Section = () => {
 
         <div className="section-page">
           <div className="section-title">
-            <img src={img1} alt="" className="section-pic" />
-            <h6 className="section-subname">Yangi truck</h6>
-            <p className="section-subtext">
-              Founded in 1909 in the Port of Antwerp, Ahlers operates in ...
-            </p>
-            <a href="#" className="section-links">
-              Batafsil o`qish
-            </a>
+            <Link onClick={() => window.scrollTo({ top: 0 })} to="/news/about">
+              <img src={img1} alt="" className="section-pic" />
+              <h6 className="section-subname">Yangi truck</h6>
+              <p className="section-subtext">
+                Founded in 1909 in the Port of Antwerp, Ahlers operates in ...
+              </p>
+              <Link
+                onClick={() => window.scrollTo({ top: 0 })}
+                to="/news/about"
+                className="section-links"
+              >
+                Batafsil o`qish
+              </Link>
+            </Link>
           </div>
           <div className="section-title">
-            <img src={img2} alt="" className="section-pic" />
-            <h6 className="section-subname">Yangi truck</h6>
-            <p className="section-subtext">
-              Founded in 1909 in the Port of Antwerp, Ahlers operates in ...
-            </p>
-            <a href="#" className="section-links">
-              Batafsil o`qish
-            </a>
+            <Link onClick={() => window.scrollTo({ top: 0 })} to="/news/about">
+              <img src={img1} alt="" className="section-pic" />
+              <h6 className="section-subname">Yangi truck</h6>
+              <p className="section-subtext">
+                Founded in 1909 in the Port of Antwerp, Ahlers operates in ...
+              </p>
+              <Link
+                onClick={() => window.scrollTo({ top: 0 })}
+                to="/news/about"
+                className="section-links"
+              >
+                Batafsil o`qish
+              </Link>
+            </Link>
           </div>
           <div className="section-title">
-            <img src={img3} alt="" className="section-pic" />
-            <h6 className="section-subname">Yangi truck</h6>
-            <p className="section-subtext">
-              Founded in 1909 in the Port of Antwerp, Ahlers operates in ...
-            </p>
-            <a href="#" className="section-links">
-              Batafsil o`qish
-            </a>
+            <Link onClick={() => window.scrollTo({ top: 0 })} to="/news/about">
+              <img src={img1} alt="" className="section-pic" />
+              <h6 className="section-subname">Yangi truck</h6>
+              <p className="section-subtext">
+                Founded in 1909 in the Port of Antwerp, Ahlers operates in ...
+              </p>
+              <Link
+                onClick={() => window.scrollTo({ top: 0 })}
+                to="/news/about"
+                className="section-links"
+              >
+                Batafsil o`qish
+              </Link>
+            </Link>
           </div>
           <div className="section-title">
-            <img src={img1} alt="" className="section-pic" />
-            <h6 className="section-subname">Yangi truck</h6>
-            <p className="section-subtext">
-              Founded in 1909 in the Port of Antwerp, Ahlers operates in ...
-            </p>
-            <a href="#" className="section-links">
-              Batafsil o`qish
-            </a>
+            <Link onClick={() => window.scrollTo({ top: 0 })} to="/news/about">
+              <img src={img1} alt="" className="section-pic" />
+              <h6 className="section-subname">Yangi truck</h6>
+              <p className="section-subtext">
+                Founded in 1909 in the Port of Antwerp, Ahlers operates in ...
+              </p>
+              <Link
+                onClick={() => window.scrollTo({ top: 0 })}
+                to="/news/about"
+                className="section-links"
+              >
+                Batafsil o`qish
+              </Link>
+            </Link>
           </div>
         </div>
         <div className="section-titles">
