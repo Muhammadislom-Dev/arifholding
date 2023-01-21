@@ -23,6 +23,7 @@
   cursor: pointer;
 }
 
+
 .aside-btn:hover {
   color: #212733;
   background-color: #fff;
@@ -284,4 +285,11 @@
   align-items: center;
   justify-content: center;
   margin-top: 15px;
+}
+
+
+
+.aside-active{
+  background-color: #fff;
+  color: #000;
 }

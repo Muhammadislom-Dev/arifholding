@@ -99,7 +99,7 @@
   margin-left: -55px;
 }
 
-.footer-items {
+.footer-links {
   background: #000000;
   border-radius: 2240.1px;
   width: 57.35px;
@@ -108,8 +108,16 @@
   justify-content: center;
   height: 59.14px;
   margin: 0 10px;
+  transition: 0.5s all ease-out;
+  border: 1px solid #000000;
 }
 
-.footer-links svg path {
-  fill: red;
+.footer-links:hover{
+  background-color: #fce8bd;
+  border: 1px solid #000;
+}
+
+
+.footer-links:hover svg path {
+  fill: #000;
 }

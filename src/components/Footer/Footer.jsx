@@ -1,11 +1,11 @@
 import React from "react";
 import "./Footer.css";
 import arif from "../../assets/img/arif.png";
-import instagram from "../../assets/icons/instagram.svg";
-import twitter from "../../assets/icons/twitter.svg";
-import facebook from "../../assets/icons/facebook.svg";
-import github from "../../assets/icons/github.svg";
 import { Link } from "react-router-dom";
+import Instagram from "../../assets/icons/instagram";
+import Twitter from "../../assets/icons/twitter";
+import Facebook from "../../assets/icons/facebook";
+import Github from "../../assets/icons/github";
 
 const Footer = () => {
   return (
@@ -25,27 +25,27 @@ const Footer = () => {
             <ul className="footer-lists">
               <li className="footer-items">
                 <a href="https://www.instagram.com" className="footer-links">
-                  <img src={instagram} alt="" className="footer-logo" />
+                  <Instagram />
                 </a>
               </li>
               <li className="footer-items">
                 <a href="https://www.twitter.com" className="footer-links">
-                  <img src={twitter} alt="" className="footer-logo" />
+                  <Twitter />
                 </a>
               </li>
               <li className="footer-items">
                 <a href="https://www.facebook.com" className="footer-links">
-                  <img src={facebook} alt="" className="footer-logo" />
+                  <Facebook />
                 </a>
               </li>
               <li className="footer-items">
                 <a href="https://www.github.com" className="footer-links">
-                  <img src={github} alt="" className="footer-logo" />
+                  <Github />
                 </a>
               </li>
               <li className="footer-items">
                 <a href="https://www.instagram.com" className="footer-links">
-                  <img src={instagram} alt="" className="footer-logo" />
+                  <Instagram />
                 </a>
               </li>
             </ul>

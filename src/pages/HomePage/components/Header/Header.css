@@ -1,5 +1,5 @@
 .header {
-  padding-top: 100px;
+  padding-top: 150px;
   padding-left: 80px;
 }
 
@@ -80,10 +80,11 @@
   font-family: "SF Pro";
   font-style: normal;
   font-weight: 510;
-  font-size: 16.1975px;
+  font-size: 16px;
   line-height: 150%;
   color: #fff;
-  width: 190px;
+  width: 210px;
+  margin-top: 60px;
 }
 
 .header-list {

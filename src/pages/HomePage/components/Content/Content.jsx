@@ -8,6 +8,15 @@ import VideoModal from "../../../ReactModal/components/VideoModal/VideoModal";
 import { IoCloseOutline } from "react-icons/io5";
 import Audio from "../../../../assets/icons/audio";
 import Phone from "../../../../assets/icons/phone";
+import kamron from "../../../../assets/img/kamron.png";
+
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+};
 
 const Content = () => {
   const [videoModal, setVideoModal] = useState(false);
@@ -26,6 +35,7 @@ const Content = () => {
         className="mySwiper"
       >
         <SwiperSlide>
+          <img src={kamron} alt="" className="content-imgs" />
           <div className="container">
             <h2 className="content-name">
               KAMRON ADHAM
@@ -53,6 +63,7 @@ const Content = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
+          <img src={kamron} alt="" className="content-imgs" />
           <div className="container">
             <h2 className="content-name">
               KAMRON ADHAM

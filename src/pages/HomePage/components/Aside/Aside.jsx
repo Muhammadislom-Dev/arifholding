@@ -7,6 +7,7 @@ import img1 from "../../../../assets/img/img5.png";
 import close from "../../../../assets/img/+.png";
 import BuyModal from "../../../ReactModal/components/BuyModal/BuyModal";
 import ModalSucces from "../../../ReactModal/components/ModalSucces/ModalSucces";
+import { NavLink } from "react-router-dom";
 
 const Aside = () => {
   const information = [
@@ -127,15 +128,34 @@ const Aside = () => {
     }
   };
 
+  const [active, setActive] = useState(false);
+  const [click, setClick] = useState(false);
+  const [button, setButton] = useState(false);
+
   return (
     <>
       <div className="aside">
         <div className="container">
           <div className="aside-title">
             <div className="aside-item">
-              <button className="aside-btn">Uzexim</button>
-              <button className="aside-btn">Semento</button>
-              <button className="aside-btn">Semento</button>
+              <button
+                className={`aside-btn ${active ? `aside-active` : ""}`}
+                onClick={() => setActive(!active)}
+              >
+                Uzexim
+              </button>
+              <button
+                className={`aside-btn ${click ? `aside-active` : ""}`}
+                onClick={() => setClick(!click)}
+              >
+                Semento
+              </button>
+              <button
+                className={`aside-btn ${button ? `aside-active` : ""}`}
+                onClick={() => setButton(!button)}
+              >
+                Semento
+              </button>
             </div>
             <span className="aside-span">
               <p className="aside-text">

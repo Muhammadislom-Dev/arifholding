@@ -1,5 +1,23 @@
 .navbar {
-  padding: 30px 0;
+  position: fixed;
+  width: 100%;
+  z-index: 1001;
+  top: -15px;
+  padding-bottom: 0;
+  padding-top: 15px;
+  bottom: 84%;
+}
+
+.active {
+  color: #000;
+  background: #fce8bd;
+}
+svg path {
+  fill: #fff;
+}
+
+.active svg path {
+  fill: #000;
 }
 
 .navbar-list {
@@ -8,12 +26,6 @@
   align-items: center;
   justify-content: space-between;
 }
-
-/* .navbar .container{
-  display: flex;
-  align-items: center;
-  justify-content: baseline;
-} */
 
 .navbar-item {
   margin: 0 10px;
@@ -34,6 +46,7 @@
   display: block;
   position: relative;
   padding-bottom: 5px;
+  color: #fff;
 }
 
 .navbar-links::before {

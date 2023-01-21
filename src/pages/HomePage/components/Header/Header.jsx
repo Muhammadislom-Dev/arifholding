@@ -31,7 +31,6 @@ const Header = () => {
                      Salom, Yangi Xabar!😊%0A
                      Ismi 👤: ${e.target[0].value}%0A
                      Raqam ☎: ${e.target[1].value}%0A 
-                     Sizning xabaringiz  📝: ${e.target[2].value}%0A 
                 `;
 
       let url = `https://api.telegram.org/bot5861028519:AAEojIy3EZeId4cR6f3ob2QYFkubcnsYRjY/sendMessage?chat_id=-1001699557669&text=${botMessege}`;
@@ -61,8 +60,6 @@ const Header = () => {
       e.target[0].value = "";
 
       e.target[1].value = "";
-
-      e.target[2].value = "";
 
       openGreatModal();
     } else {
