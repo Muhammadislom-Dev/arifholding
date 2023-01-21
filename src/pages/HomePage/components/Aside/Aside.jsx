@@ -132,30 +132,50 @@ const Aside = () => {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(false);
 
+  const catalog = [
+    {
+      id: 1,
+      title: "Uzexim",
+    },
+    {
+      id: 2,
+      title: "Semento",
+    },
+    {
+      id: 3,
+      title: "Semento",
+    },
+  ];
+  const handleClick = (e) => {
+    if (active) {
+      setActive(!active);
+    } else {
+      setActive(active);
+    }
+  };
+
+  const setDuration = (e) => {
+    document.querySelectorAll(".aside-btn").forEach((e) => {
+      e.classList.remove("aside-active");
+    });
+    e.target.classList.toggle("aside-active");
+  };
+
   return (
     <>
       <div className="aside">
         <div className="container">
           <div className="aside-title">
             <div className="aside-item">
-              <button
-                className={`aside-btn ${active ? `aside-active` : ""}`}
-                onClick={() => setActive(!active)}
-              >
-                Uzexim
-              </button>
-              <button
-                className={`aside-btn ${click ? `aside-active` : ""}`}
-                onClick={() => setClick(!click)}
-              >
-                Semento
-              </button>
-              <button
-                className={`aside-btn ${button ? `aside-active` : ""}`}
-                onClick={() => setButton(!button)}
-              >
-                Semento
-              </button>
+              {catalog.map((evt, i) => (
+                <button
+                  className="aside-btn"
+                  key={i}
+                  onClick={(e) => setDuration(e)}
+                >
+                  {evt.title}
+                </button>
+              ))}
             </div>
             <span className="aside-span">
               <p className="aside-text">
