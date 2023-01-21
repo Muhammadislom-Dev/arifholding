@@ -20,16 +20,16 @@ const HomePage = () => {
         <Navbar />
         <Header />
       </div>
-      <Category />
+      {/* <Category />
       <Service />
       <Content />
-      <Slider />
+      <Slider /> */}
       <Rating />
       <Section />
-      <Aside />
+      {/* <Aside /> */}
       <About />
       <Form />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

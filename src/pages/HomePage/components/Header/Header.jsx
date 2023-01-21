@@ -184,7 +184,7 @@ const Header = () => {
           <img src={close} alt="" />
         </button>
         <div className="header-modal">
-          <img src={call} alt="" className="header-img" />
+          <img src={call} alt="" className="header-imgs" />
           <div className="header-right">
             <h3 className="header-subname">Biz bilan bog`laning</h3>
             <h5 className="header-subnames">O`zimiz aloqaga chiqamiz</h5>

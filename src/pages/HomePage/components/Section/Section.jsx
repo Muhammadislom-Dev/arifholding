@@ -41,7 +41,7 @@ const Section = () => {
           </div>
         </div>
 
-        <h2 style={{ marginLeft: 90 }} className="section-name">
+        <h2 className="section-name section-names">
           Barcha yangiliklarimiz
         </h2>
 

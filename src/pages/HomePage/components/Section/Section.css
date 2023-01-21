@@ -66,6 +66,10 @@ span {
   opacity: 0.99;
 }
 
+.section-names{
+  margin-left: 90px;
+}
+
 .section-text {
   font-family: "SF Pro";
   font-style: normal;
