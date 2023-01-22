@@ -17,19 +17,19 @@ const HomePage = () => {
   return (
     <div className="homepage">
       <div className="homepage-list">
-        <Navbar />
-        <Header />
+        {/* <Navbar />
+        <Header /> */}
       </div>
-      {/* <Category />
+      <Category />
       <Service />
       <Content />
-      <Slider /> */}
-      <Rating />
-      <Section />
+      <Slider />
+      {/* <Rating />
+      <Section /> */}
       {/* <Aside /> */}
-      <About />
-      <Form />
-      {/* <Footer /> */}
+      {/* <About />
+      <Form /> */}
+      <Footer />
     </div>
   );
 };

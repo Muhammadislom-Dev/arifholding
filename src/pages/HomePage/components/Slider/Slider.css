@@ -12,6 +12,13 @@
   height: 273px;
   margin: 0 auto;
 }
+  
+.App .slider .slider-pic{
+  width: 180px;
+  height: 200px;
+  margin-top: 50px;
+  margin-left: 130px;
+}
 
 .slider-title {
   display: flex;
@@ -31,7 +38,7 @@
   line-height: 126.34%;
   color: #ffffff;
   width: 500px;
-  padding-left: 0px;
+  padding-left: 40px;
 }
 
 .slider-text {
@@ -42,13 +49,13 @@
   line-height: 126.34%;
   color: #ffffff;
   width: 450px;
-  margin-left: -45px;
+  margin-left: -10px;
 }
 
 .slider-img {
   position: absolute;
   top: 15%;
-  left: -33%;
+  left: -36%;
   object-fit: contain;
   width: 80px;
   height: 80px;

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Slider.css";
 import serv from "../../../../assets/img/serv.png";
-import service from "../../../../assets/img/service.png";
+import service from "../../../../assets/img/services.png";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
@@ -23,7 +23,7 @@ const Slider = () => {
         items: 1,
       },
       600: {
-        items: 1.5,
+        items: 1.2,
       },
       1000: {
         items: 1.5,
