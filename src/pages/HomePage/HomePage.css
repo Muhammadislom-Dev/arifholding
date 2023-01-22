@@ -377,12 +377,21 @@
   .App .service .service-title:nth-child(3) {
     width: 90%;
   }
-  .content .content-name{
+  .content .content-name {
     font-size: 40px;
     line-height: 45px;
   }
-  .content .content-text{
+  .content .content-text {
     font-size: 14px;
+  }
+  .slider .slider-name {
+    margin-left: 0px;
+  }
+  .slider .slider-text {
+    margin-left: 0px;
+  }
+  .footer .footer-list:nth-child(1) {
+    margin-left: 60px;
   }
 }
 
@@ -485,5 +494,89 @@
 
   .App .section .section-span {
     margin: 10px 5px;
+  }
+  .footer .footer-link {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .footer .footer-list:nth-child(1) {
+    margin-left: 10px;
+  }
+  .footer .footer-list:nth-child(2) {
+    margin-left: -30px;
+    margin-top: -20px;
+  }
+  .footer .footer-links {
+    width: 35px;
+    height: 37px;
+  }
+  .footer .footer-logos {
+    width: 100px;
+  }
+  .footer .footer-text {
+    font-size: 14px;
+    width: 180px;
+  }
+  .footer .footer-texts {
+    font-size: 16px;
+  }
+  .content .content-name {
+    font-size: 30px;
+    line-height: 35px;
+    width: 200px;
+  }
+  .content .content-span{
+    font-size: 14px;
+    width: 70px;
+    margin-top:-37px;
+  }
+  .content .content-text{
+    color: #FFFFFF;
+    width: 60%;
+    font-size: 12px;
+    margin-left: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 32px;
+  }
+  .slider .slider-list{
+    height: 210px;
+  }
+  body .App .slider .slider-pic{
+    width: 100px;
+    height: 120px;
+  }
+  .service .service-img:nth-child(2){
+    margin-left: 0px;
+    width: 180px;
+  }
+  .service .service-text{
+    font-size: 14px;
+  }
+  .slider .slider-name{
+    font-size: 16px;
+    margin-left: -45px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 35px;
+    width: 240px;
+  }
+  .slider .slider-text{
+    font-size: 14px;
+    margin-left: -20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 35px;
+    width: 220px;
+  }
+
+  .footer .footer--list{
+    margin: 0;
+  }
+  .footer .footer-name{
+    margin-left: 40px;
+  }
+  .footer .footer-list{
+    margin: 0;
   }
 }
