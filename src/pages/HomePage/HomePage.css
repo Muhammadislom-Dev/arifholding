@@ -525,13 +525,13 @@
     line-height: 35px;
     width: 200px;
   }
-  .content .content-span{
+  .content .content-span {
     font-size: 14px;
     width: 70px;
-    margin-top:-37px;
+    margin-top: -37px;
   }
-  .content .content-text{
-    color: #FFFFFF;
+  .content .content-text {
+    color: #ffffff;
     width: 60%;
     font-size: 12px;
     margin-left: 30px;
@@ -539,21 +539,21 @@
     text-overflow: ellipsis;
     max-height: 32px;
   }
-  .slider .slider-list{
+  .slider .slider-list {
     height: 210px;
   }
-  body .App .slider .slider-pic{
+  body .App .slider .slider-pic {
     width: 100px;
     height: 120px;
   }
-  .service .service-img:nth-child(2){
+  .service .service-img:nth-child(2) {
     margin-left: 0px;
     width: 180px;
   }
-  .service .service-text{
+  .service .service-text {
     font-size: 14px;
   }
-  .slider .slider-name{
+  .slider .slider-name {
     font-size: 16px;
     margin-left: -45px;
     overflow: hidden;
@@ -561,7 +561,7 @@
     max-height: 35px;
     width: 240px;
   }
-  .slider .slider-text{
+  .slider .slider-text {
     font-size: 14px;
     margin-left: -20px;
     overflow: hidden;
@@ -570,13 +570,19 @@
     width: 220px;
   }
 
-  .footer .footer--list{
+  .footer .footer--list {
     margin: 0;
   }
-  .footer .footer-name{
+  .footer .footer-name {
     margin-left: 40px;
   }
-  .footer .footer-list{
+  .footer .footer-list {
     margin: 0;
   }
+
+  .App .rating {
+    padding-bottom: 50px;
+    padding-top: 40px;
+  }
+
 }
