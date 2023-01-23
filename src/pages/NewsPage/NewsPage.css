@@ -50,7 +50,7 @@
     text-align: center;
   }
 
-  .sidebar{
+  .sidebar {
     display: none;
   }
 }
@@ -60,7 +60,7 @@
     width: 100%;
   }
 
-  .news .news-title{
+  .news .news-title {
     height: 340px;
   }
 }
