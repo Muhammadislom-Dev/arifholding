@@ -27,9 +27,11 @@ const News = () => {
               <p className="news-subtext">
                 Founded in 1909 in the Port of Antwerp,
               </p>
-              <Link to="/news/about" className="news-links">
-                Batafsil o`qish
-              </Link>
+              <div className="news-titles">
+                <Link to="/news/about" className="news-links">
+                  Batafsil o`qish
+                </Link>
+              </div>
             </div>
           ))}
         </div>
