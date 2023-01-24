@@ -2,6 +2,8 @@
   background-color: #fce8bd;
   padding-top: 70px;
   padding-bottom: 100px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .sublime-name {
@@ -14,7 +16,6 @@
   width: 600px;
   margin-bottom: 0;
 }
-
 
 .sublime-btn {
   background: #222936;

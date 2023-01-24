@@ -28,10 +28,10 @@ const Meeting = () => {
         items: 1,
       },
       600: {
-        items: 1.5,
+        items: 1.2,
       },
       1000: {
-        items: 1.5,
+        items: 1.4,
       },
     },
   };
@@ -70,9 +70,9 @@ const Meeting = () => {
               «Matelogistics» предоставляет полный{" "}
             </p>
             <div className="meeting-left">
-              <img src={meeting} alt="" className="meeting-icon" />
+              <img src={meeting} alt="" className="meeting-icons" />
               <button onClick={handleVideoModal} className="meeting-button">
-                <img src={play} alt="" className="meeting-icon" />
+                <img src={play} alt="" className="meeting-imgs" />
                 <span className="meeting-span">Батафсил видео</span>
               </button>
             </div>
@@ -89,7 +89,6 @@ const Meeting = () => {
         </div>
       </div>
 
-      <Person />
       <div className="meeting-box">
         <OwlCarousel {...options}>
           <div className="meeting-list">

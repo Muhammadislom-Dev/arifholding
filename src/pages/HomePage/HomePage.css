@@ -393,6 +393,10 @@
   .footer .footer-list:nth-child(1) {
     margin-left: 60px;
   }
+
+  .modals .form-close{
+    margin-left: 380px;
+  }
 }
 
 @media (max-width: 460px) {
@@ -583,5 +587,15 @@
   .App .rating {
     padding-bottom: 50px;
     padding-top: 40px;
+  }
+
+  body .modal_contents{
+    width: 280px;
+  }
+  .modals .form-close{
+    margin-left: 280px;
+  }
+  .modals .form-modal-name{
+    font-size: 20px;
   }
 }
