@@ -2,24 +2,22 @@ import React, { useState } from "react";
 import "./Rating.css";
 import CountUp from "react-countup";
 import ScrollTrigger from "react-scroll-trigger";
+import { useEffect } from "react";
+import axios from "axios";
+import { BASE_URL } from "../../../../services";
 
 const Rating = () => {
-  const data = [
-    {
-      title: "Hamkorlar",
-      number: "20",
-    },
-    {
-      title: "Hil uskunalar",
-      number: "50",
-    },
-    {
-      title: "Loyihalar",
-      number: "10",
-    },
-  ];
-
   const [count, setCount] = useState(false);
+
+  const [rating, setRating] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(BASE_URL + "statistics")
+      .then((res) => setRating(res.data.data))
+      .catch((err) => console.log(err));
+  }, []);
+
 
   return (
     <div className="rating">
@@ -30,14 +28,14 @@ const Rating = () => {
           onExit={() => setCount(false)}
         >
           <div className="rating-title">
-            {data?.map((evt) => (
-              <div className="rating-list">
+            {rating?.map((evt, i) => (
+              <div key={i} className="rating-list">
                 <h3 className="rating-number">
                   {count && (
                     <CountUp
                       start={0}
                       duration={2.75}
-                      end={evt.number}
+                      end={evt.count}
                       delay={0}
                     />
                   )}

@@ -26,7 +26,7 @@ const HomePage = () => {
       <Slider />
       <Rating />
       <Section />
-      {/* <Aside /> */}
+      <Aside />
       <About />
       <Form />
       <Footer />

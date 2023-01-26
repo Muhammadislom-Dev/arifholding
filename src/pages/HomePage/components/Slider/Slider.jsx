@@ -1,13 +1,14 @@
 import React from "react";
 import "./Slider.css";
-import serv from "../../../../assets/img/serv.png";
-import service from "../../../../assets/img/services.png";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
+import { useState } from "react";
+import { useEffect } from "react";
+import axios from "axios";
+import { BASE_URL } from "../../../../services";
 
 const Slider = () => {
-    
   const options = {
     loop: true,
     center: true,
@@ -31,39 +32,39 @@ const Slider = () => {
     },
   };
 
+  const [service, setService] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(BASE_URL + "services")
+      .then((res) => setService(res.data.data))
+      .catch((err) => console.log(err));
+  }, []);
+
+
   return (
     <div className="slider">
       <OwlCarousel {...options}>
-        <div className="slider-list">
-          <img src={serv} alt="" className="slider-img" />
-          <div className="slider-title">
-            <img src={service} alt="" className="slider-pic" />
-            <span className="slider-span">
-              <h3 className="slider-name">
-                Бизда ускуна орнатилгандан сонг уни тамирлаш хизмати мавжуд
-              </h3>
-              <p className="slider-text">
-                Хар бир сотиб олинган ускунага 100 кун кафолат бериладиБизда
-                ускуна орнатилгандан сонг уни тамирлаш хизмати мавжуд
-              </p>
-            </span>
+        {service?.map((evt, i) => (
+          <div key={i} className="slider-list">
+            <img
+              src={`${BASE_URL}uploads/images/${evt.logo}`}
+              alt=""
+              className="slider-img"
+            />
+            <div className="slider-title">
+              <img
+                src={`${BASE_URL}uploads/images/${evt.img_src}`}
+                alt=""
+                className="slider-pic"
+              />
+              <span className="slider-span">
+                <h3 className="slider-name">{evt.title}</h3>
+                <p className="slider-text">{evt.description}</p>
+              </span>
+            </div>
           </div>
-        </div>
-        <div className="slider-list">
-          <img src={serv} alt="" className="slider-img" />
-          <div className="slider-title">
-            <img src={service} alt="" className="slider-pic" />
-            <span className="slider-span">
-              <h3 className="slider-name">
-                Бизда ускуна орнатилгандан сонг уни тамирлаш хизмати мавжуд
-              </h3>
-              <p className="slider-text">
-                Хар бир сотиб олинган ускунага 100 кун кафолат бериладиБизда
-                ускуна орнатилгандан сонг уни тамирлаш хизмати мавжуд
-              </p>
-            </span>
-          </div>
-        </div>
+        ))}
       </OwlCarousel>
     </div>
   );

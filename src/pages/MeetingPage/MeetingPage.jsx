@@ -9,7 +9,7 @@ const MeetingPage = () => {
     <div className='meetingpage'>
         <Nav />
         <Meeting />
-        {/* <Footer /> */}
+        <Footer />
     </div>
   )
 }

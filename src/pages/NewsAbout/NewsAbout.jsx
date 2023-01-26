@@ -11,7 +11,7 @@ const NewsAbout = () => {
       <Nav />
       <Sidebar />
       <Sublime />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };

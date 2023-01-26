@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./Header.css";
 import Modal from "../../../ReactModal/components/Modal/Modal";
-import holcim from "../../../../assets/img/holcim.png";
 import close from "../../../../assets/img/+.png";
 import call from "../../../../assets/img/call.png";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -10,6 +9,9 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper";
 import { Link } from "react-router-dom";
 import ModalSucces from "../../../ReactModal/components/ModalSucces/ModalSucces";
+import { useEffect } from "react";
+import axios from "axios";
+import { BASE_URL } from "../../../../services";
 
 const Header = () => {
   const [connection, setConnection] = useState(false);
@@ -82,6 +84,16 @@ const Header = () => {
     }
   };
 
+  const [company, setCompany] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(BASE_URL + "companies")
+      .then((res) => setCompany(res.data.data))
+      .catch((err) => console.log(err));
+  }, []);
+
+
   return (
     <div className="header">
       <Swiper
@@ -91,93 +103,32 @@ const Header = () => {
         modules={[Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide>
-          <div className="container">
-            <h2 className="header-name">
-              Semento цемент ишлаб чикариш корхонаси
-            </h2>
-            <p className="header-text">
-              It doesn’t matter that much to show a really good UI, excellent
-              animated interactions or a complex IA{" "}
-            </p>
-            <div className="header-title">
-              <Link to="/enterprice" className="header-links">
-                Батафсил
-              </Link>
-              <button onClick={handleConnection} className="header-btn">
-                Богланиш
-              </button>
-            </div>
-
-            <div className="header-list">
-              <img src={holcim} alt="" className="header-img" />
-              <p className="header-span">
-                Semento цементлари хакида{" "}
-                <Link to="/enterprice" className="header-link">
-                  батафсил танишиш
+        {company?.map((evt, i) => (
+          <SwiperSlide key={i}>
+            <div className="container">
+              <h2 className="header-name">{evt.title}</h2>
+              <p className="header-text">{evt.description}</p>
+              <div className="header-title">
+                <Link to="/enterprice" className="header-links">
+                  Батафсил
                 </Link>
-              </p>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="container">
-            <h2 className="header-name">
-              Semento цемент ишлаб чикариш корхонаси
-            </h2>
-            <p className="header-text">
-              It doesn’t matter that much to show a really good UI, excellent
-              animated interactions or a complex IA{" "}
-            </p>
-            <div className="header-title">
-              <Link to="/enterprice" className="header-links">
-                Батафсил
-              </Link>
-              <button onClick={handleConnection} className="header-btn">
-                Богланиш
-              </button>
-            </div>
+                <button onClick={handleConnection} className="header-btn">
+                  Богланиш
+                </button>
+              </div>
 
-            <div className="header-list">
-              <img src={holcim} alt="" className="header-img" />
-              <p className="header-span">
-                Semento цементлари хакида{" "}
-                <Link to="/enterprice" className="header-link">
-                  батафсил танишиш
-                </Link>
-              </p>
+              <div className="header-list">
+                <img src={`${BASE_URL}uploads/images/${evt.img_src}`} alt="" className="header-img" />
+                <p className="header-span">
+                  Semento цементлари хакида{" "}
+                  <Link to="/enterprice" className="header-link">
+                    батафсил танишиш
+                  </Link>
+                </p>
+              </div>
             </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="container">
-            <h2 className="header-name">
-              Semento цемент ишлаб чикариш корхонаси
-            </h2>
-            <p className="header-text">
-              It doesn’t matter that much to show a really good UI, excellent
-              animated interactions or a complex IA{" "}
-            </p>
-            <div className="header-title">
-              <Link to="/enterprice" className="header-links">
-                Батафсил
-              </Link>
-              <button onClick={handleConnection} className="header-btn">
-                Богланиш
-              </button>
-            </div>
-
-            <div className="header-list">
-              <img src={holcim} alt="" className="header-img" />
-              <p className="header-span">
-                Semento цементлари хакида{" "}
-                <Link to="/enterprice" className="header-link">
-                  батафсил танишиш
-                </Link>
-              </p>
-            </div>
-          </div>
-        </SwiperSlide>
+          </SwiperSlide>
+        ))}
       </Swiper>
       <Modal show={connection}>
         <button onClick={() => setConnection()} className="header-close">

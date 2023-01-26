@@ -14,6 +14,11 @@
   margin: 0 10px;
 }
 
+.section-img{
+  width: 320px;
+  height: 220px;
+}
+
 .section-list {
   display: flex;
   background: #fbfbfb;

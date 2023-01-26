@@ -1,19 +1,19 @@
-import React from 'react'
-import Nav from '../../components/Nav/Nav'
-import Footer from '../Footer/Footer'
-import News from './components/News/News'
-import Sidebar from './components/Sidebar/Sidebar'
-import './NewsPage.css'
+import React from "react";
+import Nav from "../../components/Nav/Nav";
+import Footer from "../Footer/Footer";
+import News from "./components/News/News";
+import Sidebar from "./components/Sidebar/Sidebar";
+import "./NewsPage.css";
 
 const NewsPage = () => {
   return (
-    <div className='newspage'>
-        <Nav />
-        <Sidebar />
-        <News />
-        <Footer />
+    <div className="newspage">
+      <Nav />
+      <Sidebar />
+      <News />
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default NewsPage
+export default NewsPage;

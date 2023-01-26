@@ -9,6 +9,9 @@ import { IoCloseOutline } from "react-icons/io5";
 import Audio from "../../../../assets/icons/audio";
 import Phone from "../../../../assets/icons/phone";
 import kamron from "../../../../assets/img/kamron.png";
+import { useEffect } from "react";
+import axios from "axios";
+import { BASE_URL } from "../../../../services";
 
 const settings = {
   dots: true,
@@ -25,6 +28,15 @@ const Content = () => {
     setVideoModal(!videoModal);
   }
 
+  const [worker, setWorker] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(BASE_URL + "workers")
+      .then((res) => setWorker(res.data.data))
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <div className="content">
       <Swiper
@@ -34,62 +46,37 @@ const Content = () => {
         modules={[Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide>
-          <img src={kamron} alt="" className="content-imgs" />
-          <div className="container">
-            <h2 className="content-name">
-              KAMRON ADHAM
-              <p className="content-span">Ceo and founder </p>
-            </h2>
-            <p className="content-text">
-              Хамкорларимиз мавжуд биз улар билан анчадан бери ишлаб келмокдамиз
-              уларни 89% бизниин химатларимиздан мамнун ва кизикиш блдрмокта
-            </p>
+        {worker?.map((evt, i) => (
+          <SwiperSlide key={i}>
+            <img
+              src={`${BASE_URL}uploads/images/${evt.img_src}`}
+              alt=""
+              className="content-imgs"
+            />
+            <div className="container">
+              <h2 className="content-name">
+                {evt.name}
+                <p className="content-span"> {evt.position}</p>
+              </h2>
+              <p className="content-text">{evt.description}</p>
 
-            <div className="content-list">
-              <button onClick={handleVideoModal} className="content-btn">
-                <span className="content-img-span">
-                  <Audio />
-                </span>
-                <p className="content-subname">Батафсил видео</p>
-              </button>
-              <a href="tel:998712770707" className="content-btn">
-                <span className="content-span-img">
-                  <Phone />
-                </span>
-                <p className="content-subname">Алокага чикиш</p>
-              </a>
+              <div className="content-list">
+                <button onClick={handleVideoModal} className="content-btn">
+                  <span className="content-img-span">
+                    <Audio />
+                  </span>
+                  <p className="content-subname">Батафсил видео</p>
+                </button>
+                <a href={`tel:${evt.phone}`} className="content-btn">
+                  <span className="content-span-img">
+                    <Phone />
+                  </span>
+                  <p className="content-subname">Алокага чикиш</p>
+                </a>
+              </div>
             </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={kamron} alt="" className="content-imgs" />
-          <div className="container">
-            <h2 className="content-name">
-              KAMRON ADHAM
-              <p className="content-span">Ceo and founder </p>
-            </h2>
-            <p className="content-text">
-              Хамкорларимиз мавжуд биз улар билан анчадан бери ишлаб келмокдамиз
-              уларни 89% бизниин химатларимиздан мамнун ва кизикиш блдрмокта
-            </p>
-
-            <div className="content-list">
-              <button onClick={handleVideoModal} className="content-btn">
-                <span className="content-img-span">
-                  <Audio />
-                </span>
-                <p className="content-subname">Батафсил видео</p>
-              </button>
-              <a href="tel:998712770707" className="content-btn">
-                <span className="content-span-img">
-                  <Phone />
-                </span>
-                <p className="content-subname">Алокага чикиш</p>
-              </a>
-            </div>
-          </div>
-        </SwiperSlide>
+          </SwiperSlide>
+        ))}
       </Swiper>
 
       <VideoModal show={videoModal}>

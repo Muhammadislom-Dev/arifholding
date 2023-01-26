@@ -9,6 +9,12 @@
   width: 1540px;
 }
 
+.category-img {
+  width: 380px;
+  border-radius: 10px;
+  height: 250px;
+}
+
 .category-name {
   font-family: "SF Pro";
   font-style: normal;
