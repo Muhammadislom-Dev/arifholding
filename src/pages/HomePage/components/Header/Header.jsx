@@ -153,6 +153,7 @@ const Header = () => {
                 className="header-input"
               />
               <input
+                maxlength="14"
                 type="tel"
                 placeholder={t("number")}
                 required

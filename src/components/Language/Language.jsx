@@ -16,10 +16,21 @@ const Languages = () => {
     setSelectedLanguage(value);
   };
 
-  console.log(selectedLanguage);
+  const [logo, setLogo] = useState(false);
+  const changeBackground = () => {
+    if (window.scrollY >= 200) {
+      setLogo(true);
+    } else {
+      setLogo(false);
+    }
+  };
+  window.addEventListener("scroll", changeBackground);
+
   return (
     <div className="nav__langs">
-      <p className="nav__current-lang">{selectedLanguage}</p>
+      <p className={logo ? "languagee" : "nav__current-lang"}>
+        {selectedLanguage}
+      </p>
       <span className="nav__current-lang-path" />
       <ul className="nav__langs-container">
         {languages?.map((lang) => (

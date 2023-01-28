@@ -43,19 +43,19 @@ const Meeting = () => {
     setVideoModal(!videoModal);
   }
 
-  const {t} = useTranslation()
+  const { t } = useTranslation();
 
   return (
     <>
       <div className="meeting">
         <div className="container">
-          <h3 className="meeting-name">Meetinglar haqida</h3>
+          <h3 className="meeting-name">{t("meeting1")}</h3>
           <p className="meeting-title">
             <Link to="/" className="meeting-link">
               {t("home")}
             </Link>
             <img src={arrow} alt="" className="meeting-icon" />
-            Meetinglar
+            {t("meeting")}
           </p>
           <div className="meeting-page">
             <p className="meeting-text">
@@ -76,7 +76,7 @@ const Meeting = () => {
               <img src={meeting} alt="" className="meeting-icons" />
               <button onClick={handleVideoModal} className="meeting-button">
                 <img src={play} alt="" className="meeting-imgs" />
-                <span className="meeting-span">Батафсил видео</span>
+                <span className="meeting-span">{t("video")}</span>
               </button>
             </div>
           </div>

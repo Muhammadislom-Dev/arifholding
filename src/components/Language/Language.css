@@ -25,6 +25,11 @@
   transition: 0.5s;
 }
 
+.languagee{
+  color: #000;
+  text-transform: uppercase;
+}
+
 .nav__langs-container {
   position: absolute;
   list-style: none;

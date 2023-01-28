@@ -20,3 +20,12 @@ code {
 html {
   scroll-behavior: smooth;
 }
+
+
+.scroll-text{
+  display: flex;
+  flex-direction: column;
+  margin-left: 150px;
+  margin-top: 200px;
+  justify-content: center;
+}

@@ -544,6 +544,7 @@
   }
   .section .section-pic {
     width: 95%;
+    height: 180px;
   }
   .section .section-btn {
     width: 90px;
@@ -704,4 +705,5 @@
   body .content-video-modal {
     height: 225px;
   }
+
 }

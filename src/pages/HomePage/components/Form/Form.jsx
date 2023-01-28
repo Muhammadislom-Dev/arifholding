@@ -95,12 +95,13 @@ const Form = () => {
             type="tel"
             id="tel"
             name="tel"
+            maxlength="14"
             required
             className="form-input"
           />
-          <textarea placeholder={t("text")} name="tel" id="tel" required />
+          <textarea placeholder={t("text")} name="tel" id="tel"  />
           <button type="submit" className="form-button">
-            {t("submit")}
+            {t("send")}
           </button>
         </form>
         <ul className="form-lists">

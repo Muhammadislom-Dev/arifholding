@@ -119,6 +119,7 @@
   width: 288px;
 }
 
+
 .aside-subname {
   font-family: "SF Pro";
   font-style: normal;
@@ -431,9 +432,13 @@
   body .aside-spans {
     display: block;
     position: absolute;
-    top: 45%;
+    top: 43%;
   }
-  body .App .aside-right{
-    margin-top: 450px;
+  body .App .aside-right {
+    margin-top: 370px;
+  }
+
+  body .aside-button {
+    top: 37%;
   }
 }

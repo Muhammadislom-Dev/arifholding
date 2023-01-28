@@ -9,7 +9,29 @@ import BuyModal from "../../../ReactModal/components/BuyModal/BuyModal";
 import ModalSucces from "../../../ReactModal/components/ModalSucces/ModalSucces";
 import { useTranslation } from "react-i18next";
 
-const Aside = () => {
+function useDivScroll(ref) {
+  const [opacity, setOpacity] = useState(0.3);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!ref.current) {
+        return;
+      }
+      const { scrollTop, clientHeight, scrollHeight } = ref.current;
+      const totalHeight = scrollTop + clientHeight;
+      setOpacity(totalHeight / scrollHeight);
+    };
+    const div = ref.current;
+    div.addEventListener("scroll", handleScroll);
+    return () => {
+      div.removeEventListener("scroll", handleScroll);
+    };
+  }, [ref]);
+
+  return opacity;
+}
+
+export default function Aside() {
   const information = [
     {
       id: 1,
@@ -43,20 +65,7 @@ const Aside = () => {
     },
   ];
 
-  const [activeNumIdx, setActiveNumIdx] = useState(1);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveNumIdx((prev) => (prev + 2 > information.length ? 0 : prev + 1));
-    }, 3000);
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, [information]);
-
   const [buy, setBuy] = useState(false);
-
   function handleBuy() {
     setBuy(!buy);
   }
@@ -128,10 +137,6 @@ const Aside = () => {
     }
   };
 
-  const [active, setActive] = useState(false);
-  const [click, setClick] = useState(false);
-  const [button, setButton] = useState(false);
-
   const catalog = [
     {
       id: 1,
@@ -146,13 +151,6 @@ const Aside = () => {
       title: "Semento",
     },
   ];
-  const handleClick = (e) => {
-    if (active) {
-      setActive(!active);
-    } else {
-      setActive(active);
-    }
-  };
 
   const setDuration = (e) => {
     document.querySelectorAll(".aside-btn").forEach((e) => {
@@ -161,7 +159,10 @@ const Aside = () => {
     e.target.classList.toggle("aside-active");
   };
 
-  const {t} = useTranslation()
+  const { t } = useTranslation();
+
+  const divRef = React.useRef(null);
+  const opacity = useDivScroll(divRef);
 
   return (
     <>
@@ -180,9 +181,7 @@ const Aside = () => {
               ))}
             </div>
             <span className="aside-span">
-              <p className="aside-text">
-              {t("uskuna")}
-              </p>
+              <p className="aside-text">{t("uskuna")}</p>
               <h3 className="aside-name">Uzexim paket BLK200</h3>
             </span>
           </div>
@@ -198,7 +197,7 @@ const Aside = () => {
             ))}
           </Splide>
           <button onClick={handleBuy} className="aside-button">
-             {t("buy")}
+            {t("buy")}
           </button>
         </div>
         <div className="aside-box">
@@ -206,21 +205,17 @@ const Aside = () => {
             <p className="aside-text">{t("uskuna")}</p>
             <h3 className="aside-name">Uzexim paket BLK200</h3>
           </span>
-          <div className="aside-right">
+          <div ref={divRef} className="aside-right">
             {information.map((evt, i) => (
-              <div
-                className={`aside-titles ${
-                  i === activeNumIdx
-                    ? ""
-                    : i - 1 === activeNumIdx || i + 1 === activeNumIdx
-                    ? "numbers-closer"
-                    : "numbers-disactive"
-                }`}
-              >
+              <div style={{ opacity }} key={i} className="aside-titles">
                 <img src={img1} alt="" className="aside-logo" />
                 <div className="aside-items">
-                  <h3 className="aside-subname">{evt.title}</h3>
-                  <p className="aside-texts">{evt.text}</p>
+                  <h3 style={{ opacity }} className="aside-subname">
+                    {evt.title}
+                  </h3>
+                  <p style={{ opacity }} className="aside-texts">
+                    {evt.text}
+                  </p>
                 </div>
               </div>
             ))}
@@ -233,12 +228,8 @@ const Aside = () => {
           <img src={close} alt="" className="aside-modal-img" />
         </button>
         <div className="aside-modal">
-          <h3 className="aside-modal-name">
-            {t("aside1")}
-          </h3>
-          <p className="aside-modal-text">
-          {t("aside2")}
-          </p>
+          <h3 className="aside-modal-name">{t("aside1")}</h3>
+          <p className="aside-modal-text">{t("aside2")}</p>
           <form onSubmit={formBtn} action="" className="aside-form">
             <input
               type="name"
@@ -258,12 +249,13 @@ const Aside = () => {
               className="aside-textarea"
               name="tel"
               id="tel"
+              maxlength="14"
               required
               placeholder={t("aside3")}
             />
             <div className="aside-form-title">
               <button type="submit" className="aside-form-submit">
-                 {t("send")}
+                {t("send")}
               </button>
               <button className="aside-form-call">{t("tel")}</button>
             </div>
@@ -288,6 +280,4 @@ const Aside = () => {
       </ModalSucces>
     </>
   );
-};
-
-export default Aside;
+}
