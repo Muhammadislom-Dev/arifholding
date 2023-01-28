@@ -23,27 +23,27 @@ const Footer = () => {
             </p>
             <ul className="footer-lists">
               <li className="footerr-items">
-                <a href="#" className="footerr-links">
+                <a href="https://www.instagram.com" className="footerr-links">
                   <img src={instagram} alt="" className="footer-logo" />
                 </a>
               </li>
               <li className="footerr-items">
-                <a href="#" className="footerr-links">
+                <a href="https://www.twitter.com" className="footerr-links">
                   <img src={twitter} alt="" className="footer-logo" />
                 </a>
               </li>
               <li className="footerr-items">
-                <a href="#" className="footerr-links">
+                <a href="https://www.facebook.com" className="footerr-links">
                   <img src={facebook} alt="" className="footer-logo" />
                 </a>
               </li>
               <li className="footerr-items">
-                <a href="#" className="footerr-links">
+                <a href="https://www.github.com" className="footerr-links">
                   <img src={github} alt="" className="footer-logo" />
                 </a>
               </li>
               <li className="footerr-items">
-                <a href="#" className="footerr-links">
+                <a href="https://www.instagram.com" className="footerr-links">
                   <img src={instagram} alt="" className="footer-logo" />
                 </a>
               </li>
@@ -94,7 +94,8 @@ const Footer = () => {
               </li>
               <li className="footer-item">
                 <a href="#" className="footerr-link">
-                  Toshkent shahar, Uchtepa tumani, 283A uy
+                  Toshkent shahar, <br />
+                  Uchtepa tumani, 283A uy
                 </a>
               </li>
             </ul>

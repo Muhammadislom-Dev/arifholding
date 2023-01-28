@@ -147,7 +147,7 @@ const Header = () => {
                 className="header-input"
               />
               <input
-                type="tell"
+                type="tel"
                 placeholder="Telefon nomer"
                 required
                 className="header-input"
@@ -159,7 +159,7 @@ const Header = () => {
       </Modal>
 
       <ModalSucces shows={greatModal}>
-        <button onClick={() => setGreatModal()} className="form-close">
+        <button onClick={() => setGreatModal()} className="header-closes">
           <img src={close} className="form-img" alt="" />
         </button>
         <h3 className="form-modal-name">Murojaatingiz qabul qilindi!</h3>

@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./News.css";
 import row from "../../../../assets/img/row.png";
 import { Link } from "react-router-dom";
 import img1 from "../../../../assets/img/img1.png";
+import axios from "axios";
+import { BASE_URL } from "../../../../services";
 
 const News = () => {
+  const [news, setNews] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(BASE_URL + "news")
+      .then((res) => setNews(res.data.data))
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <div className="news">
       <div className="container">
@@ -20,13 +31,11 @@ const News = () => {
           <span>Korxona haqida</span>
         </p>
         <div className="news-list">
-          {Array.from(new Array(16)).map((e) => (
-            <div className="news-title">
+          {news.map((e, i) => (
+            <div key={i} className="news-title">
               <img src={img1} alt="" className="section-pic" />
-              <h6 className="news-subname">velo track</h6>
-              <p className="news-subtext">
-                Founded in 1909 in the Port of Antwerp,
-              </p>
+              <h6 className="news-subname">{e.title}</h6>
+              <p className="news-subtext">{e.text}</p>
               <div className="news-titles">
                 <Link to="/news/about" className="news-links">
                   Batafsil o`qish

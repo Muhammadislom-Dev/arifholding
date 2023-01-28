@@ -92,6 +92,16 @@
   color: #fce8bd;
 }
 
+.footerr-links {
+  background: #fce8bd;
+  border-radius: 2240.1px;
+  width: 57.35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 59.14px;
+}
+
 .footer-lists {
   list-style: none;
   display: flex;
@@ -100,13 +110,6 @@
 }
 
 .footerr-items {
-  background: #fce8bd;
-  border-radius: 2240.1px;
-  width: 57.35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 59.14px;
   margin: 0 10px;
 }
 

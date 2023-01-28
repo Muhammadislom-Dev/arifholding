@@ -7,7 +7,6 @@ import img1 from "../../../../assets/img/img5.png";
 import close from "../../../../assets/img/+.png";
 import BuyModal from "../../../ReactModal/components/BuyModal/BuyModal";
 import ModalSucces from "../../../ReactModal/components/ModalSucces/ModalSucces";
-import { NavLink } from "react-router-dom";
 
 const Aside = () => {
   const information = [
@@ -199,24 +198,30 @@ const Aside = () => {
             Sotib olish
           </button>
         </div>
-        <div className="aside-right">
-          {information.map((evt, i) => (
-            <div
-              className={`aside-titles ${
-                i === activeNumIdx
-                  ? ""
-                  : i - 1 === activeNumIdx || i + 1 === activeNumIdx
-                  ? "numbers-closer"
-                  : "numbers-disactive"
-              }`}
-            >
-              <img src={img1} alt="" className="aside-logo" />
-              <div className="aside-items">
-                <h3 className="aside-subname">{evt.title}</h3>
-                <p className="aside-texts">{evt.text}</p>
+        <div className="aside-box">
+          <span className="aside-spans">
+            <p className="aside-text">Bizning uskunalarimiz bilan tanishing</p>
+            <h3 className="aside-name">Uzexim paket BLK200</h3>
+          </span>
+          <div className="aside-right">
+            {information.map((evt, i) => (
+              <div
+                className={`aside-titles ${
+                  i === activeNumIdx
+                    ? ""
+                    : i - 1 === activeNumIdx || i + 1 === activeNumIdx
+                    ? "numbers-closer"
+                    : "numbers-disactive"
+                }`}
+              >
+                <img src={img1} alt="" className="aside-logo" />
+                <div className="aside-items">
+                  <h3 className="aside-subname">{evt.title}</h3>
+                  <p className="aside-texts">{evt.text}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
 

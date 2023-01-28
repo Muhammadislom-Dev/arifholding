@@ -106,8 +106,6 @@ const Meeting = () => {
           </div>
           {!!videoModal && (
             <iframe
-              width="100%"
-              height="460px"
               className="content-video-modal"
               src="https://www.youtube.com/embed/ZM4sJ5cZdG0"
               title="YouTube video player"

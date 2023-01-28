@@ -28,39 +28,38 @@ const Section = () => {
       .catch((err) => console.log(err));
   }, []);
 
-  console.log(filter);
 
   return (
     <div className="section">
       <div className="container">
-        {filter.map((evt, i) => (
-          <div className="section-list">
-            <img
-              src={`${BASE_URL}uploads/images/${evt.img_src}`}
-              alt=""
-              className="section-img"
-            />
-            <div className="section-item">
-              <div className="section-items">
-                <button className="section-btn">{evt.news_type}</button>
-                <span className="section-span">
-                  <img src={eye} alt="" className="section-icon" />
-                  <p className="section-sub">{evt.viewers} views</p>
-                </span>
-                <span className="section-span">
-                  <img src={kesh} alt="" className="section-icon" />
-                  <p className="section-sub">05.11.2022</p>
-                </span>
-              </div>
-              <h2 className="section-name">{evt.title}</h2>
-              <p className="section-text">{evt.text}</p>
-              <Link to="/news/about" className="section-link">
-                Batafsil o'qish
-              </Link>
+        <div className="section-list">
+          <img src={furniture} alt="" className="section-img" />
+          <div className="section-item">
+            <div className="section-items">
+              <button className="section-btn">Actual new</button>
+              <span className="section-span">
+                <img src={eye} alt="" className="section-icon" />
+                <p className="section-sub">16.5 k views</p>
+              </span>
+              <span className="section-span">
+                <img src={kesh} alt="" className="section-icon" />
+                <p className="section-sub">05.11.2022</p>
+              </span>
             </div>
+            <h2 className="section-name">Цементимиз хакида</h2>
+            <p className="section-text">
+              Founded in 1909 in the Port of Antwerp, Ahlers operates in 3
+              regions (Europe, CIS, Asia) helping customers to drive future
+              growth in complex markets, Ahlers is a family-owned company, 3rd
+              generation Founded in 1909 in the Port of Antwerp, Ahlers operates
+              in 3 regions (Europe, CIS, Asia) helping customers to drive future
+              growth in complex{" "}
+            </p>
+            <Link to="/news/about" className="section-link">
+              Batafsil o'qish
+            </Link>
           </div>
-        ))}
-
+        </div>
         <h2 className="section-name section-names">Barcha yangiliklarimiz</h2>
 
         <div className="section-page">

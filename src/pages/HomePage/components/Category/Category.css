@@ -9,6 +9,10 @@
   width: 1540px;
 }
 
+
+.category-list-link{
+  display: none;
+}
 .category-img {
   width: 380px;
   border-radius: 10px;

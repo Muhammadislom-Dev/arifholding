@@ -11,7 +11,7 @@ const Enterprice = () => {
       <Nav />
       <Catalog />
       <SliderPage />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };

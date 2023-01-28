@@ -14,7 +14,7 @@
   margin: 0 10px;
 }
 
-.section-img{
+.section-img {
   width: 320px;
   height: 220px;
 }
@@ -71,7 +71,7 @@ span {
   opacity: 0.99;
 }
 
-.section-names{
+.section-names {
   margin-left: 90px;
 }
 
@@ -150,6 +150,9 @@ span {
   padding-left: 22px;
   margin-top: 5px;
   margin-bottom: 0;
+  max-height: 28px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .section-links {

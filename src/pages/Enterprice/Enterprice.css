@@ -140,37 +140,55 @@
   .footerr .footer--list {
     margin: 0;
   }
-  .footerr .footerr-link{
-    font-size: 14px;
+  .footerr .footerr-link {
+    font-size: 12px;
   }
 
-  .footerr .footer-title{
+  .footerr .footer-title {
     width: 100%;
   }
   .footerr .footerr-name {
     margin-left: 40px;
   }
 
-  .catalog .catalog-text{
+  .catalog .catalog-text {
     font-size: 14px;
     width: 100%;
   }
 
-  .App .catalog-imgs{
+  .App .catalog-imgs {
     height: 270px;
   }
 
-  .slick .slick-item{
+  .slick .slick-item {
     width: 90%;
     height: 360px;
   }
 
-  .slick .slick-title{
+  .slick .slick-title {
     padding: 0;
   }
 
-  .slick .slick-names{
+  .slick .slick-names {
     font-size: 18px;
     line-height: 24px;
+  }
+
+  .footerr .footer-list:nth-child(1) {
+    width: 95%;
+  }
+
+  .footerr .footerr-texts {
+    font-size: 14px;
+    line-height: 18px;
+    width: 80%;
+  }
+  .footerr .footerr-text {
+    font-size: 12px;
+    width: 100%;
+  }
+
+  .footerr .footer-list:nth-child(2) {
+    margin-top: -25px;
   }
 }

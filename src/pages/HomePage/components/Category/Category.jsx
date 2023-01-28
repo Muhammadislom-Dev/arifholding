@@ -49,6 +49,15 @@ const Category = () => {
                   />
                   <h3 className="category-subname">{evt.title}</h3>
                   <p className="category-subtext">{evt.description}</p>
+                  <div className="category-list-link">
+                    <Link
+                      onClick={() => window.scrollTo({ top: 0 })}
+                      className="category-link"
+                      to="/enterprice"
+                    >
+                      Батафсил били
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>

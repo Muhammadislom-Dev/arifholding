@@ -123,6 +123,22 @@
   margin: 0 80px;
 }
 
+.header-closes {
+  background: #f5e1b2;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+  margin-top: -15px;
+}
+
 .header-img {
   margin: 0 30px;
   width: 150px;

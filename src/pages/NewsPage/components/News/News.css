@@ -103,6 +103,9 @@
   opacity: 0.5;
   padding-left: 22px;
   margin-bottom: 20px;
+  max-height: 40px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .news-links {
