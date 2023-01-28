@@ -5,6 +5,7 @@ import telegram from "../../../../assets/img/telegram.png";
 import phone from "../../../../assets/img/phone.png";
 import close from "../../../../assets/img/+.png";
 import ModalSucces from "../../../ReactModal/components/ModalSucces/ModalSucces";
+import { useTranslation } from "react-i18next";
 
 const Form = () => {
   const [greatModal, setGreatModal] = useState(false);
@@ -74,13 +75,15 @@ const Form = () => {
     }
   };
 
+  const { t } = useTranslation();
+
   return (
     <div className="form">
       <div className="container">
-        <h2 className="form-name">Савол, таклиф ва мурожаатлар борми?</h2>
+        <h2 className="form-name">{t("form")}</h2>
         <form onSubmit={formBtn} action="" className="form-list">
           <input
-            placeholder="Ismingiz"
+            placeholder={t("name")}
             type="name"
             id="name"
             name="name"
@@ -88,21 +91,16 @@ const Form = () => {
             className="form-input"
           />
           <input
-            placeholder="Telefon raqamingiz"
+            placeholder={t("number")}
             type="tel"
             id="tel"
             name="tel"
             required
             className="form-input"
           />
-          <textarea
-            placeholder="Sizning xabaringiz..."
-            name="tel"
-            id="tel"
-            required
-          />
+          <textarea placeholder={t("text")} name="tel" id="tel" required />
           <button type="submit" className="form-button">
-            Биз билан богланиш
+            {t("submit")}
           </button>
         </form>
         <ul className="form-lists">
@@ -128,7 +126,7 @@ const Form = () => {
         <button onClick={() => setGreatModal()} className="form-close">
           <img src={close} className="form-img" alt="" />
         </button>
-        <h3 className="form-modal-name">Murojaatingiz qabul qilindi!</h3>
+        <h3 className="form-modal-name">{t("succes")}</h3>
         <div className="form-modal-title">
           <a
             href="/"

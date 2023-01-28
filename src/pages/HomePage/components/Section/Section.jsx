@@ -9,6 +9,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
 import { BASE_URL } from "../../../../services";
+import { useTranslation } from "react-i18next";
 
 const Section = () => {
   const [news, setNews] = useState([]);
@@ -28,6 +29,7 @@ const Section = () => {
       .catch((err) => console.log(err));
   }, []);
 
+  const { t } = useTranslation();
 
   return (
     <div className="section">
@@ -39,7 +41,7 @@ const Section = () => {
               <button className="section-btn">Actual new</button>
               <span className="section-span">
                 <img src={eye} alt="" className="section-icon" />
-                <p className="section-sub">16.5 k views</p>
+                <p className="section-sub">16.5 k {t("views")}</p>
               </span>
               <span className="section-span">
                 <img src={kesh} alt="" className="section-icon" />
@@ -56,11 +58,11 @@ const Section = () => {
               growth in complex{" "}
             </p>
             <Link to="/news/about" className="section-link">
-              Batafsil o'qish
+              {t("batafsil")}
             </Link>
           </div>
         </div>
-        <h2 className="section-name section-names">Barcha yangiliklarimiz</h2>
+        <h2 className="section-name section-names">{t("news")}</h2>
 
         <div className="section-page">
           {news.map((evt, i) => (
@@ -81,7 +83,7 @@ const Section = () => {
                   to="/news/about"
                   className="section-links"
                 >
-                  Batafsil o`qish
+                  {t("link")}
                 </Link>
               </Link>
             </div>
@@ -93,7 +95,7 @@ const Section = () => {
             to="/news"
             className="section-button"
           >
-            Батафсил окиш
+            {t("link")}
           </Link>
         </div>
       </div>

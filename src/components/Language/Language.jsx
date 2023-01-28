@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import './Language.css'
+import "./Language.css";
 
 const languages = ["en", "ru", "uz"];
 
@@ -10,29 +10,45 @@ const Languages = () => {
     localStorage.getItem("i18nextLng")
   );
 
-  const isActive = (value) => {
-    return selectedLanguage === value ? "active" : null;
-  };
-
   const onChangeLanguage = (value) => {
     localStorage.setItem("i18nextLng", value);
     i18n.changeLanguage(value);
     setSelectedLanguage(value);
   };
+
+  console.log(selectedLanguage);
   return (
-    <div className="language">
-      {languages?.map((lang) => (
-        <p
-          key={lang}
-          onClick={() => onChangeLanguage(lang)}
-          className={isActive(lang)}
-        >
-          {lang}
-        </p>
-      ))}
+    <div className="nav__langs">
+      <p className="nav__current-lang">{selectedLanguage}</p>
+      <span className="nav__current-lang-path" />
+      <ul className="nav__langs-container">
+        {languages?.map((lang) => (
+          <li
+            key={lang}
+            onClick={() => onChangeLanguage(lang)}
+            className="nav__lang"
+          >
+            {lang}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
 
 export default Languages;
 
+{
+  /* <div className="navbar-langs">
+<p className="nav__current-lang">EN</p>
+<span className="nav__current-lang-path" />
+<ul className="nav__langs-container">
+  <li  className="navbar-lang">
+    RU
+  </li>
+  <li  className="navbar-lang">
+    UZ
+  </li>
+</ul>
+</div> */
+}

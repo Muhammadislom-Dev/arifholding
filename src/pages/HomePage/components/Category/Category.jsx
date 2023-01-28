@@ -5,6 +5,7 @@ import HorizontalScroll from "react-scroll-horizontal";
 import scroll from "../../../../assets/img/scroll.jpg";
 import { BASE_URL } from "../../../../services";
 import axios from "axios";
+import { useTranslation } from "react-i18next";
 
 const Category = () => {
   const [company, setCompany] = useState([]);
@@ -15,6 +16,8 @@ const Category = () => {
       .then((res) => setCompany(res.data.data))
       .catch((err) => console.log(err));
   }, []);
+
+  const {t} = useTranslation()
 
   return (
     <div className="category">
@@ -27,17 +30,17 @@ const Category = () => {
             <div className="category-page">
               <div className="category-left">
                 <h2 className="category-name">
-                  ARIF international holding jamoasi loyihalari{" "}
+                  {t("arif")}
                 </h2>
                 <p className="category-text">
-                  Hozirgi kunda 6 ta loyihamiz mavhud
+                  {t("loyiha")}
                 </p>
                 <Link
                   onClick={() => window.scrollTo({ top: 0 })}
                   className="category-link"
                   to="/enterprice"
                 >
-                  Батафсил били
+                   {t("batafsil")}
                 </Link>
               </div>
               <div className="mains">
@@ -64,7 +67,7 @@ const Category = () => {
           ))}
         </HorizontalScroll>
         <p className="category-texts">
-          Batafsil bilish uchun scroll qiling{" "}
+          {t("scroll")}
           <img src={scroll} alt="" className="category-logo" />{" "}
         </p>
       </div>

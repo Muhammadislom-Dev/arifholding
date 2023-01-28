@@ -1,16 +1,20 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import arif from "../../assets/img/ariff.png";
 import "./Nav.css";
 
 const Nav = () => {
+
+  const { t } = useTranslation();
+
   return (
     <div className="nav">
       <div className="container">
         <ul className="navbar-list">
           <li className="navbar-item">
             <Link className="nav-link navbar-links" to="/">
-              Ma’lumotlar
+            {t(`head1`)}
             </Link>
           </li>
           <li className="navbar-item">
@@ -19,12 +23,12 @@ const Nav = () => {
               className="nav-link navbar-links"
               to="/"
             >
-              Biz haqimizda
+               {t(`head2`)}
             </Link>
           </li>
           <li className="navbar-item">
             <Link className="nav-link navbar-links" to="/enterprice">
-              Korxonalar
+            {t(`head3`)}
             </Link>
           </li>
           <li className="navbar-item">
@@ -38,12 +42,12 @@ const Nav = () => {
               className="nav-link navbar-links"
               to="/news"
             >
-              Yangiliklar
+               {t(`head6`)}
             </Link>
           </li>
           <li className="navbar-item">
             <Link className="nav-link navbar-links" to="/">
-              Afzalliklarimiz
+            {t(`head5`)}
             </Link>
           </li>
           <li className="navbar-item">
@@ -52,7 +56,7 @@ const Nav = () => {
               className="nav-link navbar-links"
               to="/"
             >
-              Aloqa
+               {t(`head4`)}
             </Link>
           </li>
         </ul>

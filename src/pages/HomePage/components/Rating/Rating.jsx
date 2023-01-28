@@ -5,6 +5,7 @@ import ScrollTrigger from "react-scroll-trigger";
 import { useEffect } from "react";
 import axios from "axios";
 import { BASE_URL } from "../../../../services";
+import { useTranslation } from "react-i18next";
 
 const Rating = () => {
   const [count, setCount] = useState(false);
@@ -18,11 +19,13 @@ const Rating = () => {
       .catch((err) => console.log(err));
   }, []);
 
+  const {t} = useTranslation()
+
 
   return (
     <div className="rating">
       <div className="container">
-        <h2 className="rating-name">Бизнинг компаниямиз</h2>
+        <h2 className="rating-name">{t("rating")}</h2>
         <ScrollTrigger
           onEnter={() => setCount(true)}
           onExit={() => setCount(false)}

@@ -366,6 +366,10 @@
   body .content-video-modal {
     height: 385px;
   }
+
+  .App .navbar-mobile{
+    display: block;
+  }
 }
 
 @media (max-width: 650px) {
@@ -455,6 +459,8 @@
   body .content-video-modal {
     height: 285px;
   }
+
+
 }
 
 @media (max-width: 460px) {

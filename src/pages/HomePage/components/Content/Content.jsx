@@ -12,6 +12,7 @@ import kamron from "../../../../assets/img/kamron.png";
 import { useEffect } from "react";
 import axios from "axios";
 import { BASE_URL } from "../../../../services";
+import { useTranslation } from "react-i18next";
 
 const settings = {
   dots: true,
@@ -22,6 +23,7 @@ const settings = {
 };
 
 const Content = () => {
+  const {t} = useTranslation()
   const [videoModal, setVideoModal] = useState(false);
 
   function handleVideoModal() {
@@ -65,13 +67,13 @@ const Content = () => {
                   <span className="content-img-span">
                     <Audio />
                   </span>
-                  <p className="content-subname">Батафсил видео</p>
+                  <p className="content-subname">{t("video")}</p>
                 </button>
                 <a href={`tel:${evt.phone}`} className="content-btn">
                   <span className="content-span-img">
                     <Phone />
                   </span>
-                  <p className="content-subname">Алокага чикиш</p>
+                  <p className="content-subname">{t("tel")}</p>
                 </a>
               </div>
             </div>

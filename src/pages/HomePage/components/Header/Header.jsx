@@ -12,6 +12,7 @@ import ModalSucces from "../../../ReactModal/components/ModalSucces/ModalSucces"
 import { useEffect } from "react";
 import axios from "axios";
 import { BASE_URL } from "../../../../services";
+import { useTranslation } from "react-i18next";
 
 const Header = () => {
   const [connection, setConnection] = useState(false);
@@ -93,6 +94,7 @@ const Header = () => {
       .catch((err) => console.log(err));
   }, []);
 
+  const { t } = useTranslation();
 
   return (
     <div className="header">
@@ -110,19 +112,23 @@ const Header = () => {
               <p className="header-text">{evt.description}</p>
               <div className="header-title">
                 <Link to="/enterprice" className="header-links">
-                  Батафсил
+                  {t(`batafsil`)}
                 </Link>
                 <button onClick={handleConnection} className="header-btn">
-                  Богланиш
+                  {t(`boglanish`)}
                 </button>
               </div>
 
               <div className="header-list">
-                <img src={`${BASE_URL}uploads/images/${evt.img_src}`} alt="" className="header-img" />
+                <img
+                  src={`${BASE_URL}uploads/images/${evt.img_src}`}
+                  alt=""
+                  className="header-img"
+                />
                 <p className="header-span">
-                  Semento цементлари хакида{" "}
+                  {t(`semento`)}{" "}
                   <Link to="/enterprice" className="header-link">
-                    батафсил танишиш
+                    {t(`link`)}
                   </Link>
                 </p>
               </div>
@@ -137,22 +143,22 @@ const Header = () => {
         <div className="header-modal">
           <img src={call} alt="" className="header-imgs" />
           <div className="header-right">
-            <h3 className="header-subname">Biz bilan bog`laning</h3>
-            <h5 className="header-subnames">O`zimiz aloqaga chiqamiz</h5>
+            <h3 className="header-subname">{t("header1")}</h3>
+            <h5 className="header-subnames">{t("header2")}</h5>
             <form onSubmit={formBtn} action="" className="header-form">
               <input
                 type="name"
-                placeholder="Ism"
+                placeholder={t("name")}
                 required
                 className="header-input"
               />
               <input
                 type="tel"
-                placeholder="Telefon nomer"
+                placeholder={t("number")}
                 required
                 className="header-input"
               />
-              <button className="header-submit">Yuborish</button>
+              <button className="header-submit">{t("send")}</button>
             </form>
           </div>
         </div>
@@ -162,7 +168,7 @@ const Header = () => {
         <button onClick={() => setGreatModal()} className="header-closes">
           <img src={close} className="form-img" alt="" />
         </button>
-        <h3 className="form-modal-name">Murojaatingiz qabul qilindi!</h3>
+        <h3 className="form-modal-name">{t("succes")}</h3>
         <div className="form-modal-title">
           <a
             href="/"

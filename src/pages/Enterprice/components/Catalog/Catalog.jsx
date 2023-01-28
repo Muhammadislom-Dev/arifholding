@@ -1,21 +1,24 @@
 import React from "react";
-import './Catalog.css'
+import "./Catalog.css";
 import { Link } from "react-router-dom";
 import arrow from "../../../../assets/img/row.png";
 import background from "../../../../assets/img/bgs.png";
+import { useTranslation } from "react-i18next";
 
 const Catalog = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <div className="catalog">
         <div className="container">
-          <h2 className="catalog-name">Korxonalar haqida</h2>
+          <h2 className="catalog-name">{t("enterprice")}</h2>
           <p className="catalog-subtext">
             <Link to="/" className="catalog-home">
-              Bosh sahifa
+            {t("home")}
             </Link>
             <img src={arrow} alt="" className="catalog-img" />
-            <span>Korxona haqida</span>
+            <span>{t("enterprice1")}</span>
           </p>
           <h3 className="catalog-subname">Semento</h3>
           <p className="catalog-text">

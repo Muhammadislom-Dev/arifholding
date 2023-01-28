@@ -65,3 +65,71 @@ svg path {
 .navbar-links:hover::before {
   transform: scaleX(1);
 }
+
+.navbar-mobile {
+  background: rgba(44, 52, 66, 0.9);
+  backdrop-filter: blur(12.5px);
+  padding-top: 30px;
+  padding-bottom: 25px;
+  display: none;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.navbar-close {
+  background: #f5e1b2;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  position: relative;
+  left: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+  top: 1.5%;
+}
+
+.navbar-arif {
+  width: 150px;
+}
+
+.navbar-icon {
+  width: 35px;
+}
+
+.navbar-mobile-button {
+  background-color: transparent;
+  border: none;
+  width: 45px;
+}
+.navbar-logo {
+  width: 35px;
+}
+
+.navbar-mobile .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-modal-list {
+  list-style: none;
+  margin-top: 35px;
+}
+
+.navbar-modal-item {
+  margin: 10px 0;
+}
+
+.navbar-modal-link {
+  color: #000;
+  font-family: "SF Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15.1852px;
+  line-height: 18px;
+  text-decoration: none;
+}

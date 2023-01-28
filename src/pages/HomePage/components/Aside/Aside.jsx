@@ -7,6 +7,7 @@ import img1 from "../../../../assets/img/img5.png";
 import close from "../../../../assets/img/+.png";
 import BuyModal from "../../../ReactModal/components/BuyModal/BuyModal";
 import ModalSucces from "../../../ReactModal/components/ModalSucces/ModalSucces";
+import { useTranslation } from "react-i18next";
 
 const Aside = () => {
   const information = [
@@ -160,6 +161,8 @@ const Aside = () => {
     e.target.classList.toggle("aside-active");
   };
 
+  const {t} = useTranslation()
+
   return (
     <>
       <div className="aside">
@@ -178,7 +181,7 @@ const Aside = () => {
             </div>
             <span className="aside-span">
               <p className="aside-text">
-                Bizning uskunalarimiz bilan tanishing
+              {t("uskuna")}
               </p>
               <h3 className="aside-name">Uzexim paket BLK200</h3>
             </span>
@@ -195,12 +198,12 @@ const Aside = () => {
             ))}
           </Splide>
           <button onClick={handleBuy} className="aside-button">
-            Sotib olish
+             {t("buy")}
           </button>
         </div>
         <div className="aside-box">
           <span className="aside-spans">
-            <p className="aside-text">Bizning uskunalarimiz bilan tanishing</p>
+            <p className="aside-text">{t("uskuna")}</p>
             <h3 className="aside-name">Uzexim paket BLK200</h3>
           </span>
           <div className="aside-right">
@@ -231,24 +234,24 @@ const Aside = () => {
         </button>
         <div className="aside-modal">
           <h3 className="aside-modal-name">
-            Sotib olish uchun fo’rmani to’ldiring
+            {t("aside1")}
           </h3>
           <p className="aside-modal-text">
-            Shaxsiy ma`lumotlaringiz anonimlig ta`minlanadi
+          {t("aside2")}
           </p>
           <form onSubmit={formBtn} action="" className="aside-form">
             <input
               type="name"
               name="name"
               id="name"
-              placeholder="Ismingiz"
+              placeholder={t("name")}
               className="aside-input"
             />
             <input
               type="tel"
               name="tel"
               id="tel"
-              placeholder="Telefon raqamingiz"
+              placeholder={t("number")}
               className="aside-input"
             />
             <textarea
@@ -256,13 +259,13 @@ const Aside = () => {
               name="tel"
               id="tel"
               required
-              placeholder="Sotib olmoqchi bo’lgan mahsulotingiz haqida"
+              placeholder={t("aside3")}
             />
             <div className="aside-form-title">
               <button type="submit" className="aside-form-submit">
-                Yuborish
+                 {t("send")}
               </button>
-              <button className="aside-form-call">Biz bilan aloqa</button>
+              <button className="aside-form-call">{t("tel")}</button>
             </div>
           </form>
         </div>

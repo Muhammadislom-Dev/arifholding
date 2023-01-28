@@ -11,6 +11,7 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 import VideoModal from "../../../ReactModal/components/VideoModal/VideoModal";
 import { IoCloseOutline } from "react-icons/io5";
 import Person from "../Person/Person";
+import { useTranslation } from "react-i18next";
 
 const Meeting = () => {
   const options = {
@@ -42,6 +43,8 @@ const Meeting = () => {
     setVideoModal(!videoModal);
   }
 
+  const {t} = useTranslation()
+
   return (
     <>
       <div className="meeting">
@@ -49,7 +52,7 @@ const Meeting = () => {
           <h3 className="meeting-name">Meetinglar haqida</h3>
           <p className="meeting-title">
             <Link to="/" className="meeting-link">
-              Bosh sahifa
+              {t("home")}
             </Link>
             <img src={arrow} alt="" className="meeting-icon" />
             Meetinglar

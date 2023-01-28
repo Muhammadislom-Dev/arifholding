@@ -1,6 +1,7 @@
 import React from "react";
 import "./Slider.css";
 import machines from "../../../../assets/img/mac.png";
+import { useTranslation } from "react-i18next";
 
 const SliderPage = () => {
   const machine = [
@@ -30,10 +31,12 @@ const SliderPage = () => {
     },
   ];
 
+  const {t} = useTranslation()
+
   return (
     <div className="slick">
       <div className="container">
-        <h2 className="slick-names">Bizning uskunalarimiz bilan tanishing</h2>
+        <h2 className="slick-names">{t("enterprice2")}</h2>
         <div className="slick-list">
           <div className="slick-item">
             <h3 className="slick-name">Termoplastavtomat</h3>

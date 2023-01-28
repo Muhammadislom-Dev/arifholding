@@ -6,8 +6,12 @@ import Instagram from "../../assets/icons/instagram";
 import Twitter from "../../assets/icons/twitter";
 import Facebook from "../../assets/icons/facebook";
 import Github from "../../assets/icons/github";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+
+  const { t } = useTranslation();
+
   return (
     <div className="footer">
       <div className="container">
@@ -16,11 +20,11 @@ const Footer = () => {
             <div className="footer-sub">
               <img src={arif} alt="" className="footer-logos" />
               <p className="footer-text">
-                Xo`jalik mahsulotlari ishlab chiqarish kompaniyasi
+                {t("xojalik")}
               </p>
             </div>
             <p className="footer-texts">
-              Ijtimoiy tarmoqlarimizga obuna bo`ling
+              {t(`footer2`)}
             </p>
             <ul className="footer-lists">
               <li className="footer-items">
@@ -51,11 +55,11 @@ const Footer = () => {
             </ul>
           </div>
           <div className="footer-list">
-            <h3 className="footer-name">Kompaniyamiz</h3>
+            <h3 className="footer-name">{t("company")}</h3>
             <ul className="footer--list">
               <li className="footer-item">
                 <Link to="enterprice" className="footer-link">
-                  Korxonalar
+                {t(`head3`)}
                 </Link>
               </li>
               <li className="footer-item">
@@ -64,23 +68,23 @@ const Footer = () => {
                   to="/"
                   className="footer-link"
                 >
-                  Biz haqimizda
+                  {t(`head2`)}
                 </Link>
               </li>
               <li className="footer-item">
                 <Link to="/news" className="footer-link">
-                  Yangiliklar
+                {t(`head5`)}
                 </Link>
               </li>
               <li className="footer-item">
                 <a href="#" className="footer-link">
-                  Tadbirlar
+                {t(`party`)}
                 </a>
               </li>
             </ul>
           </div>
           <div className="footer-list">
-            <h3 className="footer-name">Aloqa</h3>
+            <h3 className="footer-name"> {t(`head4`)}</h3>
             <ul className="footer--list">
               <li className="footer-item">
                 <a href="tel:+998995595353" className="footer-link">
@@ -99,8 +103,8 @@ const Footer = () => {
               </li>
               <li className="footer-item">
                 <a href="#" className="footer-link">
-                  Toshkent shahar, <br />
-                  Uchtepa tumani, 283A uy
+                  {t("manzil")} <br />
+                  {t("manzil1")}
                 </a>
               </li>
             </ul>
