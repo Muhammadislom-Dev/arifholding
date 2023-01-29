@@ -150,4 +150,17 @@
   .nav{
     display: none;
   }
+
+  .footerr .footerr-links{
+    width: 45px;
+    height: 47px;
+  }
+  .footerr .footer-title{
+    justify-content: space-around;
+  }
+  .App .footerr{
+    padding: 0;
+    padding-top: 50px;
+    padding-bottom: 30px;
+  }
 }

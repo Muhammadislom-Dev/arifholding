@@ -21,7 +21,7 @@
   "number":"Your phone number",
   "text":"Your message...",
   "submit":"Contact Us",
-  "uskuna":"Get to know our equipment",
+  "uskuna":"Our equipment",
   "succes":"Your application has been accepted!",
   "head1":"Information",
   "head2":"About Us",
@@ -48,5 +48,7 @@
   "enterprice2":"Get to know our equipment",
   "meeting":"Meetings",
   "meeting1":"About meetings",
-  "holdingmeetings":"There are several legal issues that can arise when hosting a meeting! It is important for your organization to hold meetings in accordance with any statutory requirements (For example, societies must comply with the Societies Act (Cap 311) and companies limited by guarantee with the Companies Act and other applicable laws (For trustees, refer to the Power of Attorney and seek legal advice before proceeding. However, for most organizations, most of the details of the requirements for holding actual meetings are set out in the organization's bylaws or constitution.)"
+  "holdingmeetings":"There are several legal issues that can arise when hosting a meeting! It is important for your organization to hold meetings in accordance with any statutory requirements (For example, societies must comply with the Societies Act (Cap 311) and companies limited by guarantee with the Companies Act and other applicable laws (For trustees, refer to the Power of Attorney and seek legal advice before proceeding. However, for most organizations, most of the details of the requirements for holding actual meetings are set out in the organization's bylaws or constitution.)",
+  "news1":"All our news",
+  "time":"Latest update"
 }

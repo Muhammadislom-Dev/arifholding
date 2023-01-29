@@ -139,6 +139,7 @@
 
   .footerr .footer--list {
     margin: 0;
+    margin-left: -25px;
   }
   .footerr .footerr-link {
     font-size: 12px;
@@ -148,7 +149,8 @@
     width: 100%;
   }
   .footerr .footerr-name {
-    margin-left: 40px;
+    margin-left: 15px;
+    font-size: 18px;
   }
 
   .catalog .catalog-text {
@@ -176,6 +178,7 @@
 
   .footerr .footer-list:nth-child(1) {
     width: 95%;
+    margin-left: 30px;
   }
 
   .footerr .footerr-texts {

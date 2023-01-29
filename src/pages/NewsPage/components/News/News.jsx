@@ -23,15 +23,15 @@ const News = () => {
     <div className="news">
       <div className="container">
         <div className="news-top">
-          <h3 className="news-name">Bizning barcha yangiliklar</h3>
-          <button className="news-button">Oxirgi yangilanish 22:00</button>
+          <h3 className="news-name">{t("news1")}</h3>
+          <button className="news-button">{t("time")} 22:00</button>
         </div>
         <p className="news-home">
           <Link to="/" className="news-link">
-            Bosh sahifa
+             {t("home")}
           </Link>
           <img src={row} alt="" className="enterprice-icon" />
-          <span>Korxona haqida</span>
+          <span>{t("enterprice1")}</span>
         </p>
         <div className="news-list">
           {news.map((evt, i) => (
