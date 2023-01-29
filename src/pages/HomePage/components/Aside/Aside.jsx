@@ -159,7 +159,7 @@ export default function Aside() {
     e.target.classList.toggle("aside-active");
   };
 
-  const { t } = useTranslation();
+  const [t, i18next] = useTranslation();
 
   const divRef = React.useRef(null);
   const opacity = useDivScroll(divRef);
@@ -267,7 +267,7 @@ export default function Aside() {
         <button onClick={() => setGreatModal()} className="form-close">
           <img src={close} className="form-img" alt="" />
         </button>
-        <h3 className="form-modal-name">Murojaatingiz qabul qilindi!</h3>
+        <h3 className="form-modal-name">{t("succes")}</h3>
         <div className="form-modal-title">
           <a
             href="/"

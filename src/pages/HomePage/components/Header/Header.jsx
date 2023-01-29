@@ -94,7 +94,7 @@ const Header = () => {
       .catch((err) => console.log(err));
   }, []);
 
-  const { t } = useTranslation();
+  const [t, i18next] = useTranslation();
 
   return (
     <div className="header">
@@ -108,8 +108,12 @@ const Header = () => {
         {company?.map((evt, i) => (
           <SwiperSlide key={i}>
             <div className="container">
-              <h2 className="header-name">{evt.title}</h2>
-              <p className="header-text">{evt.description}</p>
+              <h2 className="header-name">
+                {evt[`title_${i18next.language}`]}
+              </h2>
+              <p className="header-text">
+                {evt[`description_${i18next.language}`]}{" "}
+              </p>
               <div className="header-title">
                 <Link to="/enterprice" className="header-links">
                   {t(`batafsil`)}

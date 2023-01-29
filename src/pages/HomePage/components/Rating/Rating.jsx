@@ -19,7 +19,7 @@ const Rating = () => {
       .catch((err) => console.log(err));
   }, []);
 
-  const {t} = useTranslation()
+  const [t, i18next] = useTranslation();
 
 
   return (
@@ -44,7 +44,7 @@ const Rating = () => {
                   )}
                   +
                 </h3>
-                <p className="rating-text">{evt.title}</p>
+                <p className="rating-text">{evt[`title_${i18next.language}`]}</p>
               </div>
             ))}
           </div>

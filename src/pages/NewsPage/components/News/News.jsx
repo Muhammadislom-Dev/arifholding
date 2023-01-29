@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import img1 from "../../../../assets/img/img1.png";
 import axios from "axios";
 import { BASE_URL } from "../../../../services";
+import { useTranslation } from "react-i18next";
 
 const News = () => {
   const [news, setNews] = useState([]);
@@ -15,6 +16,8 @@ const News = () => {
       .then((res) => setNews(res.data.data))
       .catch((err) => console.log(err));
   }, []);
+
+  const [t, i18next] = useTranslation();
 
   return (
     <div className="news">
@@ -31,11 +34,13 @@ const News = () => {
           <span>Korxona haqida</span>
         </p>
         <div className="news-list">
-          {news.map((e, i) => (
+          {news.map((evt, i) => (
             <div key={i} className="news-title">
               <img src={img1} alt="" className="section-pic" />
-              <h6 className="news-subname">{e.title}</h6>
-              <p className="news-subtext">{e.text}</p>
+              <h6 className="news-subname">
+                {evt[`title_${i18next.language}`]}
+              </h6>
+              <p className="news-subtext">{evt[`text_${i18next.language}`]}</p>
               <div className="news-titles">
                 <Link to="/news/about" className="news-links">
                   Batafsil o`qish

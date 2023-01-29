@@ -367,7 +367,7 @@
     height: 385px;
   }
 
-  .App .navbar-mobile{
+  .App .navbar-mobile {
     display: block;
   }
 }
@@ -459,8 +459,6 @@
   body .content-video-modal {
     height: 285px;
   }
-
-
 }
 
 @media (max-width: 460px) {
@@ -604,9 +602,9 @@
   }
   .content .content-text {
     color: #ffffff;
-    width: 60%;
+    width: 80%;
     font-size: 12px;
-    margin-left: 70px;
+    margin-left: 100px;
     overflow: hidden;
     text-overflow: ellipsis;
     max-height: 32px;
@@ -706,4 +704,11 @@
     height: 225px;
   }
 
+  .footer .footer-title {
+    justify-content: space-around;
+  }
+
+  .App .header {
+    padding-top: 70px;
+  }
 }

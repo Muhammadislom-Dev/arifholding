@@ -7,6 +7,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
 import { BASE_URL } from "../../../../services";
+import { useTranslation } from "react-i18next";
 
 const Slider = () => {
   const options = {
@@ -41,6 +42,7 @@ const Slider = () => {
       .catch((err) => console.log(err));
   }, []);
 
+  const [t, i18next] = useTranslation();
 
   return (
     <div className="slider">
@@ -59,8 +61,12 @@ const Slider = () => {
                 className="slider-pic"
               />
               <span className="slider-span">
-                <h3 className="slider-name">{evt.title}</h3>
-                <p className="slider-text">{evt.description}</p>
+                <h3 className="slider-name">
+                  {evt[`title_${i18next.language}`]}
+                </h3>
+                <p className="slider-text">
+                  {evt[`description_${i18next.language}`]}
+                </p>
               </span>
             </div>
           </div>

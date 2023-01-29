@@ -23,7 +23,7 @@ const settings = {
 };
 
 const Content = () => {
-  const {t} = useTranslation()
+  const [t, i18next] = useTranslation();
   const [videoModal, setVideoModal] = useState(false);
 
   function handleVideoModal() {
@@ -58,9 +58,9 @@ const Content = () => {
             <div className="container">
               <h2 className="content-name">
                 {evt.name}
-                <p className="content-span"> {evt.position}</p>
+                <p className="content-span"> {evt[`position_${i18next.language}`]}</p>
               </h2>
-              <p className="content-text">{evt.description}</p>
+              <p className="content-text">{evt[`description_${i18next.language}`]}</p>
 
               <div className="content-list">
                 <button onClick={handleVideoModal} className="content-btn">

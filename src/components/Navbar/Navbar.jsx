@@ -111,9 +111,9 @@ const Navbar = () => {
         </button>
         <ul className="navbar-modal-list">
           <li className="navbar-modal-item">
-            <a href="/" className="navbar-modal-link">
+            <Link to="/" className="navbar-modal-link">
             {t(`head1`)}
-            </a>
+            </Link>
           </li>
           <li className="navbar-modal-item">
             <a

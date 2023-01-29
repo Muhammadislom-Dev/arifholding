@@ -17,7 +17,7 @@ const Category = () => {
       .catch((err) => console.log(err));
   }, []);
 
-  const {t} = useTranslation()
+  const [t, i18next] = useTranslation();
 
   return (
     <div className="category">
@@ -29,18 +29,14 @@ const Category = () => {
           {company?.map((evt, i) => (
             <div className="category-page">
               <div className="category-left">
-                <h2 className="category-name">
-                  {t("arif")}
-                </h2>
-                <p className="category-text">
-                  {t("loyiha")}
-                </p>
+                <h2 className="category-name">{t("arif")}</h2>
+                <p className="category-text">{t("loyiha")}</p>
                 <Link
                   onClick={() => window.scrollTo({ top: 0 })}
                   className="category-link"
                   to="/enterprice"
                 >
-                   {t("batafsil")}
+                  {t("batafsil")}
                 </Link>
               </div>
               <div className="mains">
@@ -50,15 +46,19 @@ const Category = () => {
                     alt=""
                     className="category-img"
                   />
-                  <h3 className="category-subname">{evt.title}</h3>
-                  <p className="category-subtext">{evt.description}</p>
+                  <h3 className="category-subname">
+                    {evt[`title_${i18next.language}`]}
+                  </h3>
+                  <p className="category-subtext">
+                    {evt[`description_${i18next.language}`]}
+                  </p>
                   <div className="category-list-link">
                     <Link
                       onClick={() => window.scrollTo({ top: 0 })}
                       className="category-link"
                       to="/enterprice"
                     >
-                      Батафсил били
+                      {t("batafsil")}
                     </Link>
                   </div>
                 </div>

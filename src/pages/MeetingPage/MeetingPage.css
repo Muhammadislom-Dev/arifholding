@@ -143,4 +143,11 @@
   .App .meetingpage .meeting-img {
     width: 90%;
   }
+  .meetingpage-navbar {
+    display: block;
+  }
+
+  .nav{
+    display: none;
+  }
 }

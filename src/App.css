@@ -14,6 +14,10 @@
   border-radius: 54px;
 }
 
-a{
+a {
   text-decoration: none;
+}
+
+.meetingpage-navbar {
+  display: none;
 }

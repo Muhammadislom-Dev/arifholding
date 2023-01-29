@@ -29,7 +29,7 @@ const Section = () => {
       .catch((err) => console.log(err));
   }, []);
 
-  const { t } = useTranslation();
+  const [t, i18next] = useTranslation();
 
   return (
     <div className="section">
@@ -76,8 +76,8 @@ const Section = () => {
                   alt=""
                   className="section-pic"
                 />
-                <h6 className="section-subname">{evt.title}</h6>
-                <p className="section-subtext">{evt.text}</p>
+                <h6 className="section-subname">{evt[`title_${i18next.language}`]}</h6>
+                <p className="section-subtext">{evt[`text_${i18next.language}`]}</p>
                 <Link
                   onClick={() => window.scrollTo({ top: 0 })}
                   to="/news/about"
