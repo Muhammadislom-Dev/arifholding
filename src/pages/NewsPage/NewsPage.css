@@ -63,4 +63,14 @@
   .news .news-title {
     height: 340px;
   }
+
+  .App .news-list {
+    margin-left: 0;
+  }
+  .App .news-button {
+    margin: 0 auto;
+  }
+  .App .news-home{
+    justify-content: center;
+  }
 }

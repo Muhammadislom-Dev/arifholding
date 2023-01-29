@@ -6,6 +6,7 @@ import twitter from "../../assets/icons/twitter.png";
 import facebook from "../../assets/icons/facebook.png";
 import github from "../../assets/icons/github.png";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -52,24 +53,40 @@ const Footer = () => {
             <h3 className="footerr-name">{t("company")}</h3>
             <ul className="footer--list">
               <li className="footer-item">
-                <a href="#" className="footerr-link">
+                <Link
+                  to="/"
+                  onClick={() => window.scrollTo({ top: 0 })}
+                  className="footerr-link"
+                >
                   {t(`head3`)}
-                </a>
+                </Link>
               </li>
               <li className="footer-item">
-                <a href="#" className="footerr-link">
+                <Link
+                  onClick={() => window.scrollTo({ top: 3200 })}
+                  to="/"
+                  className="footerr-link"
+                >
                   {t(`head2`)}
-                </a>
+                </Link>
               </li>
               <li className="footer-item">
-                <a href="#" className="footerr-link">
+                <Link
+                  onClick={() => window.scrollTo({ top: 0 })}
+                  to="/news"
+                  className="footerr-link"
+                >
                   {t(`head5`)}
-                </a>
+                </Link>
               </li>
               <li className="footer-item">
-                <a href="#" className="footerr-link">
+                <Link
+                  onClick={() => window.scrollTo({ top: 8300 })}
+                  to="/"
+                  className="footerr-link"
+                >
                   {t(`party`)}
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

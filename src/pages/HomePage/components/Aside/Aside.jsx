@@ -257,7 +257,7 @@ export default function Aside() {
               <button type="submit" className="aside-form-submit">
                 {t("send")}
               </button>
-              <button className="aside-form-call">{t("tel")}</button>
+              <a href="+998712770707" className="aside-form-call">{t("tel")}</a>
             </div>
           </form>
         </div>

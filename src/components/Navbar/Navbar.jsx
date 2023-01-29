@@ -53,6 +53,7 @@ const Navbar = () => {
             </li>
             <li className="navbar-item">
               <Link
+                onClick={() => window.scrollTo({ top: 0 })}
                 className={navbar ? "active" : "navbar-links"}
                 to="/enterprice"
               >
@@ -98,7 +99,9 @@ const Navbar = () => {
           <button onClick={openGreatModal} className="navbar-mobile-button">
             <img src={toggle} alt="" className="navbar-logo" />
           </button>
-          <img src={arif} alt="" className="navbar-arif" />
+          <Link to="/">
+            <img src={arif} alt="" className="navbar-arif" />
+          </Link>
           <a href="tel:+998991569652" className="navbar-mogile-link">
             <img src={phone} alt="" className="navbar-icon" />
           </a>
@@ -111,11 +114,15 @@ const Navbar = () => {
         </button>
         <ul className="navbar-modal-list">
           <li className="navbar-modal-item">
-            <Link to="/" className="navbar-modal-link">
-            {t(`head1`)}
+            <Link
+              onClick={() => setGreatModal()}
+              to="/"
+              className="navbar-modal-link"
+            >
+              {t(`head1`)}
             </Link>
           </li>
-          <li className="navbar-modal-item">
+          <li onClick={() => setGreatModal()} className="navbar-modal-item">
             <a
               onClick={() => window.scrollTo({ top: 3100 })}
               href="#"
@@ -124,28 +131,32 @@ const Navbar = () => {
               {t(`head2`)}
             </a>
           </li>
-          <li className="navbar-modal-item">
+          <li onClick={() => setGreatModal()} className="navbar-modal-item">
             <Link to="/enterprice" className="navbar-modal-link">
-            {t(`head3`)}
+              {t(`head3`)}
             </Link>
           </li>
-          <li className="navbar-modal-item">
-            <a href="#" className="navbar-modal-link">
-            {t(`head6`)}
+          <li onClick={() => setGreatModal()} className="navbar-modal-item">
+            <a
+              onClick={() => window.scrollTo({ top: 0 })}
+              href="#"
+              className="navbar-modal-link"
+            >
+              {t(`head6`)}
             </a>
           </li>
-          <li className="navbar-modal-item">
+          <li onClick={() => setGreatModal()} className="navbar-modal-item">
             <a
-              onClick={() => window.scrollTo({ top: 3900 })}
+              onClick={() => window.scrollTo({ top: 6850 })}
               href="#"
               className="navbar-modal-link"
             >
               {t(`head4`)}
             </a>
           </li>
-          <li className="navbar-modal-item">
+          <li onClick={() => setGreatModal()} className="navbar-modal-item">
             <a
-              onClick={() => window.scrollTo({ top: 6750 })}
+              onClick={() => window.scrollTo({ top: 3200 })}
               href="#"
               className="navbar-modal-link"
             >

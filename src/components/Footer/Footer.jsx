@@ -9,7 +9,6 @@ import Github from "../../assets/icons/github";
 import { useTranslation } from "react-i18next";
 
 const Footer = () => {
-
   const { t } = useTranslation();
 
   return (
@@ -19,13 +18,9 @@ const Footer = () => {
           <div className="footer-list">
             <div className="footer-sub">
               <img src={arif} alt="" className="footer-logos" />
-              <p className="footer-text">
-                {t("xojalik")}
-              </p>
+              <p className="footer-text">{t("xojalik")}</p>
             </div>
-            <p className="footer-texts">
-              {t(`footer2`)}
-            </p>
+            <p className="footer-texts">{t(`footer2`)}</p>
             <ul className="footer-lists">
               <li className="footer-items">
                 <a href="https://www.instagram.com" className="footer-links">
@@ -59,7 +54,7 @@ const Footer = () => {
             <ul className="footer--list">
               <li className="footer-item">
                 <Link to="enterprice" className="footer-link">
-                {t(`head3`)}
+                  {t(`head3`)}
                 </Link>
               </li>
               <li className="footer-item">
@@ -73,13 +68,17 @@ const Footer = () => {
               </li>
               <li className="footer-item">
                 <Link to="/news" className="footer-link">
-                {t(`head5`)}
+                  {t(`head5`)}
                 </Link>
               </li>
               <li className="footer-item">
-                <a href="#" className="footer-link">
-                {t(`party`)}
-                </a>
+                <Link
+                  onClick={() => window.scrollTo({ top: 5300 })}
+                  to="/"
+                  className="footer-link"
+                >
+                  {t(`party`)}
+                </Link>
               </li>
             </ul>
           </div>

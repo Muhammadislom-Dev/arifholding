@@ -483,7 +483,7 @@
   .header .header-name {
     font-size: 27px;
     line-height: 35px;
-    width: 100%;
+    width: 80%;
   }
   .App .header {
     padding-left: 15px;
@@ -637,6 +637,12 @@
   }
   .service .service-text {
     font-size: 14px;
+    max-height: 39px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .service .service-text:nth-child(1){
+    margin-top: 35px;
   }
   .slider .slider-name {
     font-size: 16px;
@@ -685,7 +691,7 @@
   }
 
   .content .content-btn {
-    width: 180px;
+    width: 200px;
     margin: 15px 10px;
   }
 

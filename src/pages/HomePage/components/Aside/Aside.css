@@ -281,6 +281,9 @@
   margin: 0 10px;
   transition: 0.5s;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .aside-form-call:hover {

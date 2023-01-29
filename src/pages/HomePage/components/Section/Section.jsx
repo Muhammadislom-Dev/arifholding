@@ -31,6 +31,8 @@ const Section = () => {
 
   const [t, i18next] = useTranslation();
 
+  console.log(news);
+
   return (
     <div className="section">
       <div className="container">
@@ -65,7 +67,7 @@ const Section = () => {
         <h2 className="section-name section-names">{t("news")}</h2>
 
         <div className="section-page">
-          {news.map((evt, i) => (
+          {news?.map((evt, i) => (
             <div key={i} className="section-title">
               <Link
                 onClick={() => window.scrollTo({ top: 0 })}
@@ -76,8 +78,8 @@ const Section = () => {
                   alt=""
                   className="section-pic"
                 />
-                <h6 className="section-subname">{evt[`title_${i18next.language}`]}</h6>
-                <p className="section-subtext">{evt[`text_${i18next.language}`]}</p>
+                <h6 className="section-subname">{evt[`title_${i18next?.language}`]}</h6>
+                <p className="section-subtext">{evt[`text_${i18next?.language}`]}</p>
                 <Link
                   onClick={() => window.scrollTo({ top: 0 })}
                   to="/news/about"

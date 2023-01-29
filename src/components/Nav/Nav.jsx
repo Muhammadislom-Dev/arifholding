@@ -5,7 +5,6 @@ import arif from "../../assets/img/ariff.png";
 import "./Nav.css";
 
 const Nav = () => {
-
   const { t } = useTranslation();
 
   return (
@@ -14,7 +13,7 @@ const Nav = () => {
         <ul className="navbar-list">
           <li className="navbar-item">
             <Link className="nav-link navbar-links" to="/">
-            {t(`head1`)}
+              {t(`head1`)}
             </Link>
           </li>
           <li className="navbar-item">
@@ -23,12 +22,12 @@ const Nav = () => {
               className="nav-link navbar-links"
               to="/"
             >
-               {t(`head2`)}
+              {t(`head2`)}
             </Link>
           </li>
           <li className="navbar-item">
             <Link className="nav-link navbar-links" to="/enterprice">
-            {t(`head3`)}
+              {t(`head3`)}
             </Link>
           </li>
           <li className="navbar-item">
@@ -42,12 +41,12 @@ const Nav = () => {
               className="nav-link navbar-links"
               to="/news"
             >
-               {t(`head6`)}
+              {t(`head6`)}
             </Link>
           </li>
           <li className="navbar-item">
             <Link className="nav-link navbar-links" to="/">
-            {t(`head5`)}
+              {t(`head5`)}
             </Link>
           </li>
           <li className="navbar-item">
@@ -56,7 +55,7 @@ const Nav = () => {
               className="nav-link navbar-links"
               to="/"
             >
-               {t(`head4`)}
+              {t(`head4`)}
             </Link>
           </li>
         </ul>
