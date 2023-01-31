@@ -27,14 +27,14 @@ const Category = () => {
           reverseScroll={true}
         >
           {company?.map((evt, i) => (
-            <div className="category-page">
+            <div key={i} className="category-page">
               <div className="category-left">
                 <h2 className="category-name">{t("arif")}</h2>
                 <p className="category-text">{t("loyiha")}</p>
                 <Link
                   onClick={() => window.scrollTo({ top: 0 })}
                   className="category-link"
-                  to="/enterprice"
+                  to={`/enterprice=${evt?.id}`}
                 >
                   {t("batafsil")}
                 </Link>

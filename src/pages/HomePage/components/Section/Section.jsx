@@ -31,7 +31,7 @@ const Section = () => {
 
   const [t, i18next] = useTranslation();
 
-  console.log(news);
+  console.log(news)
 
   return (
     <div className="section">
@@ -78,11 +78,15 @@ const Section = () => {
                   alt=""
                   className="section-pic"
                 />
-                <h6 className="section-subname">{evt[`title_${i18next?.language}`]}</h6>
-                <p className="section-subtext">{evt[`text_${i18next?.language}`]}</p>
+                <h6 className="section-subname">
+                  {evt[`title_${i18next?.language}`]}
+                </h6>
+                <p className="section-subtext">
+                  {evt[`text_${i18next?.language}`]}
+                </p>
                 <Link
                   onClick={() => window.scrollTo({ top: 0 })}
-                  to="/news/about"
+                  to={`/news/about=${evt?.id}`}
                   className="section-links"
                 >
                   {t("link")}

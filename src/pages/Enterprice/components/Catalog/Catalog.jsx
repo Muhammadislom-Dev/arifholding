@@ -1,13 +1,26 @@
 import React from "react";
 import "./Catalog.css";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import arrow from "../../../../assets/img/row.png";
 import background from "../../../../assets/img/bgs.png";
 import { useTranslation } from "react-i18next";
+import { useState } from "react";
+import axios from "axios";
+import { useEffect } from "react";
+import { BASE_URL } from "../../../../services";
+import SliderPage from "../Slider/Slider";
 
 const Catalog = () => {
-  const { t } = useTranslation();
+  const [t, i18next] = useTranslation();
+  var { id } = useParams();
+  const [company, setCompany] = useState([]);
 
+  useEffect(() => {
+    axios
+      .get(BASE_URL + `companies/${id}`)
+      .then((res) => setCompany(res.data.data))
+      .catch((err) => console.log(err));
+  }, []);
   return (
     <>
       <div className="catalog">
@@ -15,27 +28,22 @@ const Catalog = () => {
           <h2 className="catalog-name">{t("enterprice")}</h2>
           <p className="catalog-subtext">
             <Link to="/" className="catalog-home">
-            {t("home")}
+              {t("home")}
             </Link>
             <img src={arrow} alt="" className="catalog-img" />
             <span>{t("enterprice1")}</span>
           </p>
-          <h3 className="catalog-subname">Semento</h3>
+          <h3 className="catalog-subname">
+            {company[`title_${i18next.language}`]}
+          </h3>
           <p className="catalog-text">
-            Lorem Ipsum - это текст-"рыба", часто используемый в печати и
-            вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на
-            латинице с начала XVI века. В то время некий безымянный печатник
-            создал большую коллекцию размеров и форм шрифтов, используя Lorem
-            Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил
-            без заметных изменений пять веков, но и перешагнул в электронный
-            дизайн. Его популяризации в новое время послужили публикация листов
-            Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее
-            время, программы электронной вёрстки типа Aldus PageMaker, в
-            шаблонах которых используется Lorem Ipsum.
+            {company[`description_${i18next.language}`]}
           </p>
         </div>
       </div>
       <img src={background} alt="" className="catalog-imgs" />
+
+      <SliderPage company={company} />
     </>
   );
 };

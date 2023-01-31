@@ -8,6 +8,8 @@ import close from "../../../../assets/img/+.png";
 import BuyModal from "../../../ReactModal/components/BuyModal/BuyModal";
 import ModalSucces from "../../../ReactModal/components/ModalSucces/ModalSucces";
 import { useTranslation } from "react-i18next";
+import axios from "axios";
+import { BASE_URL } from "../../../../services";
 
 function useDivScroll(ref) {
   const [opacity, setOpacity] = useState(0.3);
@@ -32,38 +34,9 @@ function useDivScroll(ref) {
 }
 
 export default function Aside() {
-  const information = [
-    {
-      id: 1,
-      title: "Бепул ремонт хизмати",
-      text: "Founded in 1909 in the Port of Antwerp, Ahlers operates in 3 regions (Europe, CIS, Asia) helping customers to drive future growth",
-    },
-    {
-      id: 2,
-      title: "Бепул ремонт хизмати",
-      text: "Founded in 1909 in the Port of Antwerp, Ahlers operates in 3 regions (Europe, CIS, Asia) helping customers to drive future growth",
-    },
-    {
-      id: 3,
-      title: "Бепул ремонт хизмати",
-      text: "Founded in 1909 in the Port of Antwerp, Ahlers operates in 3 regions (Europe, CIS, Asia) helping customers to drive future growth",
-    },
-    {
-      id: 4,
-      title: "Бепул ремонт хизмати",
-      text: "Founded in 1909 in the Port of Antwerp, Ahlers operates in 3 regions (Europe, CIS, Asia) helping customers to drive future growth",
-    },
-    {
-      id: 5,
-      title: "Бепул ремонт хизмати",
-      text: "Founded in 1909 in the Port of Antwerp, Ahlers operates in 3 regions (Europe, CIS, Asia) helping customers to drive future growth",
-    },
-    {
-      id: 6,
-      title: "Бепул ремонт хизмати",
-      text: "Founded in 1909 in the Port of Antwerp, Ahlers operates in 3 regions (Europe, CIS, Asia) helping customers to drive future growth",
-    },
-  ];
+  const [discount, setDiscount] = useState([]);
+  const [products, setProducts] = useState([]);
+  const [company, setCompany] = useState([]);
 
   const [buy, setBuy] = useState(false);
   function handleBuy() {
@@ -164,19 +137,40 @@ export default function Aside() {
   const divRef = React.useRef(null);
   const opacity = useDivScroll(divRef);
 
+  useEffect(() => {
+    axios
+      .get(BASE_URL + "promotions")
+      .then((res) => setDiscount(res.data.data))
+      .catch((err) => console.log(err));
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get(BASE_URL + "products")
+      .then((res) => setProducts(res.data.data))
+      .catch((err) => console.log(err));
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get(BASE_URL + "companies")
+      .then((res) => setCompany(res.data.data))
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <>
       <div className="aside">
         <div className="container">
           <div className="aside-title">
             <div className="aside-item">
-              {catalog.map((evt, i) => (
+              {company?.map((evt, i) => (
                 <button
                   className="aside-btn"
                   key={i}
                   onClick={(e) => setDuration(e)}
                 >
-                  {evt.title}
+                  {evt[`title_${i18next.language}`]}
                 </button>
               ))}
             </div>
@@ -190,9 +184,13 @@ export default function Aside() {
       <div className="aside-page">
         <div className="aside-left">
           <Splide>
-            {Array.from(new Array(6)).map((e) => (
-              <SplideSlide>
-                <img className="aside-img" src={machine} alt="" />
+            {products.map((evt, i) => (
+              <SplideSlide key={i}>
+                <img
+                  className="aside-img"
+                  src={`${BASE_URL}uploads/images/${evt.img_src}`}
+                  alt=""
+                />
               </SplideSlide>
             ))}
           </Splide>
@@ -206,15 +204,19 @@ export default function Aside() {
             <h3 className="aside-name">Uzexim paket BLK200</h3>
           </span>
           <div ref={divRef} className="aside-right">
-            {information.map((evt, i) => (
+            {discount.map((evt, i) => (
               <div style={{ opacity }} key={i} className="aside-titles">
-                <img src={img1} alt="" className="aside-logo" />
+                <img
+                  src={`${BASE_URL}uploads/images/${evt.img_src}`}
+                  alt=""
+                  className="aside-logo"
+                />
                 <div className="aside-items">
                   <h3 style={{ opacity }} className="aside-subname">
-                    {evt.title}
+                    {evt[`title_${i18next.language}`]}
                   </h3>
                   <p style={{ opacity }} className="aside-texts">
-                    {evt.text}
+                    {evt[`description_${i18next.language}`]}
                   </p>
                 </div>
               </div>
@@ -257,7 +259,9 @@ export default function Aside() {
               <button type="submit" className="aside-form-submit">
                 {t("send")}
               </button>
-              <a href="+998712770707" className="aside-form-call">{t("tel")}</a>
+              <a href="+998712770707" className="aside-form-call">
+                {t("tel")}
+              </a>
             </div>
           </form>
         </div>

@@ -23,6 +23,9 @@
   transition: 0.5s all ease-out;
   border-radius: 25px;
   padding: 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .slick-title:hover {
@@ -50,6 +53,9 @@
   margin-top: 30px;
   width: 180px;
   margin-left: 25px;
+  max-height: 40px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .slick-img {

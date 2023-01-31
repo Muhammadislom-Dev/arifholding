@@ -10,15 +10,13 @@ import ScrollingText from "./ScrollText";
 const Redirect = () => {
   return (
     <>
-    
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/enterprice" element={<Enterprice />} />
+        <Route path="/enterprice=:id" element={<Enterprice />} />
         <Route path="/news" element={<NewsPage />} />
-        <Route path="/news/about" element={<NewsAbout />} />
+        <Route path="/news/about=:id" element={<NewsAbout />} />
         <Route path="/meeting" element={<MeetingPage />} />
       </Routes>
-      {/* <ScrollingText /> */}
     </>
   );
 };
