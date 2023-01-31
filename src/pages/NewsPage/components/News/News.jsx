@@ -9,7 +9,6 @@ import { useTranslation } from "react-i18next";
 
 const News = () => {
   const [news, setNews] = useState([]);
-  var { id } = useParams();
   useEffect(() => {
     axios
       .get(BASE_URL + "news")
@@ -36,14 +35,18 @@ const News = () => {
         <div className="news-list">
           {news?.map((evt, i) => (
             <div key={i} className="news-title">
-              <img src={img1} alt="" className="section-pic" />
+              <img
+                src={`${BASE_URL}uploads/images/${evt.img_src}`}
+                alt=""
+                className="section-pic"
+              />
               <h6 className="news-subname">
                 {evt[`title_${i18next.language}`]}
               </h6>
               <p className="news-subtext">{evt[`text_${i18next.language}`]}</p>
               <div className="news-titles">
-                <Link to="/news/about" className="news-links">
-                  Batafsil o`qish
+                <Link to={`/news/about=${evt?.id}`} className="news-links">
+                  {t("link")}
                 </Link>
               </div>
             </div>

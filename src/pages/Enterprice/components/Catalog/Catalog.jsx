@@ -41,7 +41,7 @@ const Catalog = () => {
           </p>
         </div>
       </div>
-      <img src={background} alt="" className="catalog-imgs" />
+      <img  src={`${BASE_URL}uploads/images/${company.img_src}`} alt="" className="catalog-imgs" />
 
       <SliderPage company={company} />
     </>

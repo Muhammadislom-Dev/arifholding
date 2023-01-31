@@ -31,7 +31,6 @@ const Section = () => {
 
   const [t, i18next] = useTranslation();
 
-  console.log(news)
 
   return (
     <div className="section">

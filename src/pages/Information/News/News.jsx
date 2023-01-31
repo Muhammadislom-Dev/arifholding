@@ -5,20 +5,20 @@ import { Link, useParams } from "react-router-dom";
 import img1 from "../../../assets/img/img1.png";
 import axios from "axios";
 import { BASE_URL } from "../../../services";
-import { useTranslation } from "react-i18next"; 
+import { useTranslation } from "react-i18next";
 
 const News = () => {
   const [news, setNews] = useState([]);
   var { id } = useParams();
   useEffect(() => {
     axios
-      .get(BASE_URL + `news/${id}`)
+      .get(BASE_URL + "news")
       .then((res) => setNews(res.data.data))
       .catch((err) => console.log(err));
   }, []);
 
   const [t, i18next] = useTranslation();
-  console.log(id)
+  console.log(news);
   return (
     <div className="news">
       <div className="container">
@@ -34,20 +34,24 @@ const News = () => {
           <span>{t("enterprice1")}</span>
         </p>
         <div className="news-list">
-          {news?.map((evt, i) => (
-            <div key={i} className="news-title">
-              <img src={img1} alt="" className="section-pic" />
-              <h6 className="news-subname">
-                {evt[`title_${i18next.language}`]}
-              </h6>
-              <p className="news-subtext">{evt[`text_${i18next.language}`]}</p>
-              <div className="news-titles">
-                <Link to="/news/about" className="news-links">
-                  Batafsil o`qish
-                </Link>
+          {news
+            .filter((e) => e.workerId === id)
+            .map((evt, i) => (
+              <div key={i} className="news-title">
+                <img src={`${BASE_URL}uploads/images/${evt.img_src}`} alt="" className="section-pic" />
+                <h6 className="news-subname">
+                  {evt[`title_${i18next.language}`]}
+                </h6>
+                <p className="news-subtext">
+                  {evt[`text_${i18next.language}`]}
+                </p>
+                <div className="news-titles">
+                  <Link to={`/news/about=${evt?.id}`} className="news-links">
+                    {t("link")}
+                  </Link>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
       </div>
     </div>

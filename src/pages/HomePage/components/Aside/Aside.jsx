@@ -131,8 +131,8 @@ export default function Aside() {
 
   useEffect(() => {
     axios
-      .get(BASE_URL + `products/${linkId}`)
-      .then((res) => setProducts(res?.data))
+      .get(BASE_URL + "products")
+      .then((res) => setProducts(res?.data?.data))
       .catch((err) => console.log(err));
   }, []);
 
@@ -176,8 +176,8 @@ export default function Aside() {
           <Splide>
             {products &&
               products
-                ?.filter((e) => console.log(e))
-                .map((evt, i) => (
+                ?.filter((e) => e.companyId === linkId)
+                ?.map((evt, i) => (
                   <SplideSlide key={i}>
                     <img
                       className="aside-img"
@@ -252,7 +252,7 @@ export default function Aside() {
               <button type="submit" className="aside-form-submit">
                 {t("send")}
               </button>
-              <a href="+998712770707" className="aside-form-call">
+              <a href="tel:+998712770707" className="aside-form-call">
                 {t("tel")}
               </a>
             </div>

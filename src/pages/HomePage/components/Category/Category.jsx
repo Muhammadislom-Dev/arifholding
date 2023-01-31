@@ -56,7 +56,7 @@ const Category = () => {
                     <Link
                       onClick={() => window.scrollTo({ top: 0 })}
                       className="category-link"
-                      to="/enterprice"
+                      to={`/enterprice=${evt?.id}`}
                     >
                       {t("batafsil")}
                     </Link>
