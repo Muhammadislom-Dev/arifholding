@@ -112,7 +112,7 @@ const Header = () => {
                 {evt[`title_${i18next.language}`]}
               </h2>
               <p className="header-text">
-                {evt[`description_${i18next.language}`]}{" "}
+                {evt[`description_${i18next.language}`]}
               </p>
               <div className="header-title">
                 <Link to={`/enterprice=${evt?.id}`} className="header-links">

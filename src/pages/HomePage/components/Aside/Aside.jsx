@@ -166,7 +166,7 @@ export default function Aside() {
             </div>
             <span className="aside-span">
               <p className="aside-text">{t("uskuna")}</p>
-              <h3 className="aside-name">Uzexim paket BLK200</h3>
+              <h3 className="aside-name">{t("uzexim")}</h3>
             </span>
           </div>
         </div>
@@ -194,7 +194,7 @@ export default function Aside() {
         <div className="aside-box">
           <span className="aside-spans">
             <p className="aside-text">{t("uskuna")}</p>
-            <h3 className="aside-name">Uzexim paket BLK200</h3>
+            <h3 className="aside-name">{t("uzexim")}</h3>
           </span>
           <div ref={divRef} className="aside-right">
             {discount?.map((evt, i) => (

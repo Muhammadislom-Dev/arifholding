@@ -4,12 +4,20 @@
   background-size: 100% 100%;
   padding-top: 90px;
   padding-bottom: 150px;
+  padding-left: 100px;
 }
 
 .about-title {
   display: flex;
   align-items: center;
 }
+
+.about-item {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+
 .about-subname {
   font-family: "SF Pro";
   font-style: normal;

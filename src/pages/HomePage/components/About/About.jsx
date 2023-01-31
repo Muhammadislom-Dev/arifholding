@@ -3,32 +3,60 @@ import "./About.css";
 import arif from "../../../../assets/img/arif.svg";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { useState } from "react";
+import { useEffect } from "react";
+import axios from "axios";
+import { BASE_URL } from "../../../../services";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper";
 
 const About = () => {
-  const { t } = useTranslation();
+  const [t, i18next] = useTranslation();
+
+  const [about, setAbout] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(BASE_URL + "about")
+      .then((res) => setAbout(res.data.data))
+      .catch((err) => console.log(err));
+  }, []);
+
+  console.log(about);
 
   return (
     <div className="about">
-      <div className="container">
-        <div className="about-title">
-          <img src={arif} alt="" className="about-img" />
-          <p className="about-subname">{t("tadbir")}</p>
-        </div>
-        <h2 className="about-name">
-          Холдингимиз да янги ускунани текшируви болиб отди
-        </h2>
-        <p className="about-text">
-          Stretch plyonkasini ishlab chiqarish linyasi Stretch plyonkasini
-          ishlab chiqarish linyasi,
-        </p>
-        <Link
-          onClick={() => window.scrollTo({ top: 0 })}
-          to="/meeting"
-          className="about-btn"
-        >
-          {t("batafsil")}
-        </Link>
-      </div>
+      <Swiper
+        pagination={{
+          dynamicBullets: true,
+        }}
+        modules={[Pagination]}
+        className="about-swiper"
+      >
+        {about?.map((evt, i) => (
+          <SwiperSlide className="about-item">
+            <div className="about-title">
+              <img src={arif} alt="" className="about-img" />
+              <p className="about-subname">{t("tadbir")}</p>
+            </div>
+            <h2 className="about-name">
+            {evt[`title_${i18next.language}`]}
+            </h2>
+            <p className="about-text">
+            {evt[`description_${i18next.language}`]}
+            </p>
+            <Link
+              onClick={() => window.scrollTo({ top: 0 })}
+              to={`/meeting=${evt.id}`}
+              className="about-btn"
+            >
+              {t("batafsil")}
+            </Link>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 };

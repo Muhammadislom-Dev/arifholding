@@ -119,7 +119,6 @@
   width: 288px;
 }
 
-
 .aside-subname {
   font-family: "SF Pro";
   font-style: normal;
@@ -427,7 +426,7 @@
   }
 
   body .App .aside-btn {
-    width: 100px;
+    width: 140px;
     height: 40px;
     font-size: 14px;
   }

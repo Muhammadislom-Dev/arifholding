@@ -13,6 +13,10 @@
   color: #222936;
 }
 
+.meeting-icons{
+  width: 550px;
+}
+
 .meeting-left {
   margin-left: 50px;
 }
@@ -49,7 +53,7 @@
   display: flex;
   align-items: center;
   position: absolute;
-  top: 70%;
+  top: 73%;
   font-family: "SF Pro Display";
   font-style: normal;
   font-weight: 400;

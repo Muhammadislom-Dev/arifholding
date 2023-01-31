@@ -17,7 +17,7 @@ const Redirect = () => {
         <Route path="/news" element={<NewsPage />} />
         <Route path="/news=:id" element={<Information />} />
         <Route path="/news/about=:id" element={<NewsAbout />} />
-        <Route path="/meeting" element={<MeetingPage />} />
+        <Route path="/meeting=:id" element={<MeetingPage />} />
       </Routes>
     </>
   );
