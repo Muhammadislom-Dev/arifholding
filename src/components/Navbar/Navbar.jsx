@@ -53,9 +53,9 @@ const Navbar = () => {
             </li>
             <li className="navbar-item">
               <Link
-                onClick={() => window.scrollTo({ top: 0 })}
+                to="/"
+                onClick={() => window.scrollTo({ top: 700 })}
                 className={navbar ? "active" : "navbar-links"}
-                to="/enterprice"
               >
                 {t(`head3`)}
               </Link>

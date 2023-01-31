@@ -1,24 +1,24 @@
 import React, { useEffect, useState } from "react";
 import "./News.css";
-import row from "../../../../assets/img/row.png";
+import row from "../../../assets/img/row.png";
 import { Link, useParams } from "react-router-dom";
-import img1 from "../../../../assets/img/img1.png";
+import img1 from "../../../assets/img/img1.png";
 import axios from "axios";
-import { BASE_URL } from "../../../../services";
-import { useTranslation } from "react-i18next";
+import { BASE_URL } from "../../../services";
+import { useTranslation } from "react-i18next"; 
 
 const News = () => {
   const [news, setNews] = useState([]);
   var { id } = useParams();
   useEffect(() => {
     axios
-      .get(BASE_URL + "news")
+      .get(BASE_URL + `news/${id}`)
       .then((res) => setNews(res.data.data))
       .catch((err) => console.log(err));
   }, []);
 
   const [t, i18next] = useTranslation();
-
+  console.log(id)
   return (
     <div className="news">
       <div className="container">

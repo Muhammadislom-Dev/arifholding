@@ -1,36 +1,32 @@
+import axios from "axios";
 import React from "react";
+import { useState } from "react";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { BASE_URL } from "../../../../services";
 import "./Sidebar.css";
 
 const Sidebar = () => {
+  const [worker, setWorker] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(BASE_URL + "workers")
+      .then((res) => setWorker(res.data.data))
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <div className="sidebar">
       <div className="container">
         <ul className="sidebar-list">
-          <li className="sidebar-item">
-            <a href="#" className="sidebar-link">
-              So’nggi yangiliklar
-            </a>
-          </li>
-          <li className="sidebar-item">
-            <a href="#" className="sidebar-link">
-              Holding{" "}
-            </a>
-          </li>
-          <li className="sidebar-item">
-            <a href="#" className="sidebar-link">
-              Semento
-            </a>
-          </li>
-          <li className="sidebar-item">
-            <a href="#" className="sidebar-link">
-              Uzexim
-            </a>
-          </li>
-          <li className="sidebar-item">
-            <a href="#" className="sidebar-link">
-              Islom moliyasi
-            </a>
-          </li>
+          {worker?.map((evt, i) => (
+            <li key={i} className="sidebar-item">
+              <Link to={`/news=${evt.id}`} className="sidebar-link">
+                {evt.name}
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
     </div>

@@ -10,6 +10,7 @@ import ModalSucces from "../../../ReactModal/components/ModalSucces/ModalSucces"
 import { useTranslation } from "react-i18next";
 import axios from "axios";
 import { BASE_URL } from "../../../../services";
+import { Link } from "react-router-dom";
 
 function useDivScroll(ref) {
   const [opacity, setOpacity] = useState(0.3);
@@ -37,13 +38,12 @@ export default function Aside() {
   const [discount, setDiscount] = useState([]);
   const [products, setProducts] = useState([]);
   const [company, setCompany] = useState([]);
+  const [greatModal, setGreatModal] = useState(false);
 
   const [buy, setBuy] = useState(false);
   function handleBuy() {
     setBuy(!buy);
   }
-
-  const [greatModal, setGreatModal] = useState(false);
 
   function openGreatModal() {
     setGreatModal(!greatModal);
@@ -110,21 +110,6 @@ export default function Aside() {
     }
   };
 
-  const catalog = [
-    {
-      id: 1,
-      title: "Uzexim",
-    },
-    {
-      id: 2,
-      title: "Semento",
-    },
-    {
-      id: 3,
-      title: "Semento",
-    },
-  ];
-
   const setDuration = (e) => {
     document.querySelectorAll(".aside-btn").forEach((e) => {
       e.classList.remove("aside-active");
@@ -146,8 +131,8 @@ export default function Aside() {
 
   useEffect(() => {
     axios
-      .get(BASE_URL + "products")
-      .then((res) => setProducts(res.data.data))
+      .get(BASE_URL + `products/${linkId}`)
+      .then((res) => setProducts(res?.data))
       .catch((err) => console.log(err));
   }, []);
 
@@ -157,6 +142,8 @@ export default function Aside() {
       .then((res) => setCompany(res.data.data))
       .catch((err) => console.log(err));
   }, []);
+
+  const [linkId, setLinkId] = useState();
 
   return (
     <>
@@ -168,7 +155,10 @@ export default function Aside() {
                 <button
                   className="aside-btn"
                   key={i}
-                  onClick={(e) => setDuration(e)}
+                  onClick={(e) => {
+                    setDuration(e);
+                    setLinkId(evt?.id);
+                  }}
                 >
                   {evt[`title_${i18next.language}`]}
                 </button>
@@ -184,15 +174,18 @@ export default function Aside() {
       <div className="aside-page">
         <div className="aside-left">
           <Splide>
-            {products.map((evt, i) => (
-              <SplideSlide key={i}>
-                <img
-                  className="aside-img"
-                  src={`${BASE_URL}uploads/images/${evt.img_src}`}
-                  alt=""
-                />
-              </SplideSlide>
-            ))}
+            {products &&
+              products
+                ?.filter((e) => console.log(e))
+                .map((evt, i) => (
+                  <SplideSlide key={i}>
+                    <img
+                      className="aside-img"
+                      src={`${BASE_URL}uploads/images/${evt.img_src}`}
+                      alt=""
+                    />
+                  </SplideSlide>
+                ))}
           </Splide>
           <button onClick={handleBuy} className="aside-button">
             {t("buy")}
@@ -204,7 +197,7 @@ export default function Aside() {
             <h3 className="aside-name">Uzexim paket BLK200</h3>
           </span>
           <div ref={divRef} className="aside-right">
-            {discount.map((evt, i) => (
+            {discount?.map((evt, i) => (
               <div style={{ opacity }} key={i} className="aside-titles">
                 <img
                   src={`${BASE_URL}uploads/images/${evt.img_src}`}
