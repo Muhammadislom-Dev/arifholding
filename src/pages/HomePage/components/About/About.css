@@ -3,8 +3,7 @@
   background-repeat: no-repeat;
   background-size: 100% 100%;
   padding-top: 90px;
-  padding-bottom: 150px;
-  padding-left: 100px;
+  padding-bottom: 100px;
 }
 
 .about-title {
@@ -18,6 +17,10 @@
   align-items: baseline;
 }
 
+.about .container{
+  padding-bottom: 15px;
+}
+
 .about-subname {
   font-family: "SF Pro";
   font-style: normal;
@@ -27,6 +30,10 @@
   color: #ffffff;
   opacity: 0.8;
   margin-left: 35px;
+}
+
+.about-item-link{
+  margin-top: -20px;
 }
 
 .about-name {
@@ -48,7 +55,7 @@
   line-height: 25px;
   color: #ffffff;
   width: 360px;
-  padding-bottom: 120px;
+  padding-bottom: 100px;
 }
 
 .about-btn {
@@ -62,7 +69,6 @@
   border: 0.720862px solid #ffffff;
   border-radius: 35.3223px;
   padding: 10.0921px 26.6719px;
-  margin-top: 30px;
   transition: 0.3s;
 }
 

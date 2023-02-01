@@ -50,9 +50,8 @@
   margin-top: 50px;
 }
 
-
-.catalog-imgs{
-    width: 100%;
-    height: 650px;
-    object-fit: cover;
+.catalog-imgs {
+  width: 100%;
+  height: 650px;
+  object-fit: cover;
 }

@@ -115,7 +115,11 @@ const Header = () => {
                 {evt[`description_${i18next.language}`]}
               </p>
               <div className="header-title">
-                <Link to={`/enterprice=${evt?.id}`} className="header-links">
+                <Link
+                  onClick={() => window.scrollTo({ top: 0 })}
+                  to={`/enterprice=${evt?.id}`}
+                  className="header-links"
+                >
                   {t(`batafsil`)}
                 </Link>
                 <button onClick={handleConnection} className="header-btn">
@@ -131,7 +135,11 @@ const Header = () => {
                 />
                 <p className="header-span">
                   {t(`semento`)}{" "}
-                  <Link to={`/enterprice=${evt?.id}`} className="header-link">
+                  <Link
+                    onClick={() => window.scrollTo({ top: 0 })}
+                    to={`/enterprice=${evt?.id}`}
+                    className="header-link"
+                  >
                     {t(`link`)}
                   </Link>
                 </p>

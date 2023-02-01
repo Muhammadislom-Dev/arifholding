@@ -12,9 +12,7 @@
   width: 500px;
 }
 
-.mySwiper{
-  padding-left: 80px;
-}
+
 
 .header-text {
   font-family: "SF Pro";
@@ -95,6 +93,7 @@
   align-items: center;
   padding: 50px 0;
   padding-bottom: 80px;
+  margin-left: -25px;
 }
 
 .header-link {

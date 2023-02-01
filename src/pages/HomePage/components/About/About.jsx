@@ -33,27 +33,29 @@ const About = () => {
           dynamicBullets: true,
         }}
         modules={[Pagination]}
-        className="about-swiper"
+        className="mySwiper"
       >
         {about?.map((evt, i) => (
-          <SwiperSlide className="about-item">
-            <div className="about-title">
-              <img src={arif} alt="" className="about-img" />
-              <p className="about-subname">{t("tadbir")}</p>
+          <SwiperSlide key={i}>
+            <div className="container">
+              <div className="about-title">
+                <img src={arif} alt="" className="about-img" />
+                <p className="about-subname">{t("tadbir")}</p>
+              </div>
+              <h2 className="about-name">{evt[`title_${i18next.language}`]}</h2>
+              <p className="about-text">
+                {evt[`description_${i18next.language}`]}
+              </p>
+              <div className="about-item-link">
+                <Link
+                  onClick={() => window.scrollTo({ top: 0 })}
+                  to={`/meeting=${evt.id}`}
+                  className="about-btn"
+                >
+                  {t("batafsil")}
+                </Link>
+              </div>
             </div>
-            <h2 className="about-name">
-            {evt[`title_${i18next.language}`]}
-            </h2>
-            <p className="about-text">
-            {evt[`description_${i18next.language}`]}
-            </p>
-            <Link
-              onClick={() => window.scrollTo({ top: 0 })}
-              to={`/meeting=${evt.id}`}
-              className="about-btn"
-            >
-              {t("batafsil")}
-            </Link>
           </SwiperSlide>
         ))}
       </Swiper>

@@ -2,15 +2,15 @@ import React, { useEffect, useState } from "react";
 import "./Aside.css";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
-import machine from "../../../../assets/img/machine.png";
-import img1 from "../../../../assets/img/img5.png";
-import close from "../../../../assets/img/+.png";
-import BuyModal from "../../../ReactModal/components/BuyModal/BuyModal";
-import ModalSucces from "../../../ReactModal/components/ModalSucces/ModalSucces";
+// import machine from "../../../../assets/img/machine.png";
+// import img1 from "../../../../assets/img/img5.png";
+import close from "../../../assets/img/+.png";
+import BuyModal from "../../ReactModal/components/BuyModal/BuyModal";
+import ModalSucces from "../../ReactModal/components/ModalSucces/ModalSucces";
 import { useTranslation } from "react-i18next";
 import axios from "axios";
-import { BASE_URL } from "../../../../services";
-import { Link } from "react-router-dom";
+import { BASE_URL } from "../../../services";
+import { Link, useLocation, useParams } from "react-router-dom";
 
 function useDivScroll(ref) {
   const [opacity, setOpacity] = useState(0.3);
@@ -39,9 +39,7 @@ export default function Aside() {
   const [company, setCompany] = useState([]);
   const [products, setProducts] = useState([]);
   const [greatModal, setGreatModal] = useState(false);
-  const [linkId, setLinkId] = useState();
-  const [filter, setFilter] = useState([]);
-
+  const location = useLocation();
   const [buy, setBuy] = useState(false);
   function handleBuy() {
     setBuy(!buy);
@@ -149,6 +147,9 @@ export default function Aside() {
       .catch((err) => console.log(err));
   }, []);
 
+  const linkId = location.pathname.slice(1, 37);
+  console.log(linkId);
+
   return (
     <>
       <div className="aside">
@@ -157,13 +158,12 @@ export default function Aside() {
             <div className="aside-item">
               {company?.map((evt, i) => (
                 <Link
-                  to={`/${evt?.id}`}
+                  to={`/${evt.id}`}
                   className="aside-btn"
                   key={i}
+                  id={linkId}
                   onClick={(e) => {
                     setDuration(e);
-                    setLinkId(evt.id);
-                    window.scrollTo({ top: 4200 });
                   }}
                 >
                   {evt[`title_${i18next.language}`]}
@@ -180,15 +180,17 @@ export default function Aside() {
       <div className="aside-page">
         <div className="aside-left">
           <Splide>
-            {products?.map((evt, i) => (
-              <SplideSlide key={i}>
-                <img
-                  className="aside-img"
-                  src={`${BASE_URL}uploads/images/${evt.img_src}`}
-                  alt=""
-                />
-              </SplideSlide>
-            ))}
+            {products
+              ?.filter((e) => e.companyId === linkId)
+              ?.map((evt, i) => (
+                <SplideSlide key={i}>
+                  <img
+                    className="aside-img"
+                    src={`${BASE_URL}uploads/images/${evt.img_src}`}
+                    alt=""
+                  />
+                </SplideSlide>
+              ))}
           </Splide>
           <button onClick={handleBuy} className="aside-button">
             {t("buy")}

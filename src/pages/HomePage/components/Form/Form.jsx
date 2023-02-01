@@ -78,7 +78,7 @@ const Form = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="form">
+    <div id="communication" className="form">
       <div className="container">
         <h2 className="form-name">{t("form")}</h2>
         <form onSubmit={formBtn} action="" className="form-list">

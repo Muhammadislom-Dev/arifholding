@@ -25,12 +25,11 @@ const Section = () => {
   useEffect(() => {
     axios
       .get(BASE_URL + "news?is_primary=true")
-      .then((res) => setFilter(res.data.data))
+      .then((res) => setFilter(res.data.data[0]))
       .catch((err) => console.log(err));
   }, []);
 
   const [t, i18next] = useTranslation();
-
 
   return (
     <div className="section">
@@ -39,26 +38,29 @@ const Section = () => {
           <img src={furniture} alt="" className="section-img" />
           <div className="section-item">
             <div className="section-items">
-              <button className="section-btn">Actual new</button>
+              <button className="section-btn">
+                {!!filter && filter[`news_type_${i18next?.language}`]}
+              </button>
               <span className="section-span">
                 <img src={eye} alt="" className="section-icon" />
-                <p className="section-sub">16.5 k {t("views")}</p>
+                <p className="section-sub">
+                  {filter?.viewers} {t("views")}
+                </p>
               </span>
               <span className="section-span">
                 <img src={kesh} alt="" className="section-icon" />
-                <p className="section-sub">05.11.2022</p>
+                <p className="section-sub">
+                  {!!filter?.createdAt && filter?.createdAt.slice(0, 10)}
+                </p>
               </span>
             </div>
-            <h2 className="section-name">Цементимиз хакида</h2>
+            <h2 className="section-name">
+              {!!filter && filter[`title_${i18next?.language}`]}
+            </h2>
             <p className="section-text">
-              Founded in 1909 in the Port of Antwerp, Ahlers operates in 3
-              regions (Europe, CIS, Asia) helping customers to drive future
-              growth in complex markets, Ahlers is a family-owned company, 3rd
-              generation Founded in 1909 in the Port of Antwerp, Ahlers operates
-              in 3 regions (Europe, CIS, Asia) helping customers to drive future
-              growth in complex{" "}
+              {!!filter && filter[`text_${i18next?.language}`]}
             </p>
-            <Link to="/news/about" className="section-link">
+            <Link to={`/news/about=${filter?.id}`} className="section-link">
               {t("batafsil")}
             </Link>
           </div>
@@ -70,7 +72,7 @@ const Section = () => {
             <div key={i} className="section-title">
               <Link
                 onClick={() => window.scrollTo({ top: 0 })}
-                to="/news/about"
+                to={`/news/about=${evt?.id}`}
               >
                 <img
                   src={`${BASE_URL}uploads/images/${evt.img_src}`}

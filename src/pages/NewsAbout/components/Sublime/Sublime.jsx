@@ -12,6 +12,7 @@ import { useTranslation } from "react-i18next";
 
 const Sublime = () => {
   const [news, setNews] = useState([]);
+  const [copy, setCopy] = useState(false);
   const { id } = useParams();
   useEffect(() => {
     axios
@@ -29,7 +30,10 @@ const Sublime = () => {
       .catch((err) => console.log(err));
   }, []);
 
-  console.log(information);
+  const handleClick = () => {
+    navigator.clipboard.writeText(window.location.href);
+    setCopy(true);
+  };
 
   return (
     <div className="sublime">
@@ -40,8 +44,12 @@ const Sublime = () => {
               {news[`title_${i18next.language}`]}
             </h2>
             <div className="sublime-title">
-              <button className="sublime-btn">
-                <img src={download} alt="" className="sublime-logo" />
+              <button onClick={handleClick} className="sublime-btn">
+                {copy ? (
+                  <img src={download} alt="" className="sublime-logo" />
+                ) : (
+                  <img src={download} alt="" className="sublime-logo" />
+                )}
               </button>
               <span className="sublime-span">
                 {!!news.worker && news?.createdAt.slice(0, 10)}
@@ -66,7 +74,10 @@ const Sublime = () => {
                 <p className="sublime-texts">
                   {evt[`text_${i18next.language}`]}
                 </p>
-                <spam className="sublime-spans"> {news?.createdAt.slice(0, 10)}</spam>
+                <spam className="sublime-spans">
+                  {" "}
+                  {news?.createdAt.slice(0, 10)}
+                </spam>
               </div>
             ))}
           </div>

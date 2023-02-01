@@ -52,6 +52,12 @@
   justify-content: space-around;
 }
 
+.aside-item {
+  width: 330px;
+  display: flex;
+  align-items: center;
+}
+
 .aside-name {
   font-family: "SF Pro";
   font-style: normal;

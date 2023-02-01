@@ -90,6 +90,15 @@
   .App .meetingpage .meeting-box {
     padding: 50px 0;
   }
+  .meetingpage-navbar {
+    display: block;
+  }
+
+  .App .nav{
+    background-color: transparent;
+    padding: 0;
+    border: none;
+  }
 }
 
 @media (max-width: 600px) {
@@ -132,7 +141,7 @@
   }
 
   .meeting .meeting-button {
-    top: 49%;
+    top: 67%;
   }
 
   .meeting .meeting-name {
@@ -143,22 +152,18 @@
   .App .meetingpage .meeting-img {
     width: 90%;
   }
-  .meetingpage-navbar {
-    display: block;
-  }
-
-  .nav{
+  .nav {
     display: none;
   }
 
-  .footerr .footerr-links{
+  .footerr .footerr-links {
     width: 45px;
     height: 47px;
   }
-  .footerr .footer-title{
+  .footerr .footer-title {
     justify-content: space-around;
   }
-  .App .footerr{
+  .App .footerr {
     padding: 0;
     padding-top: 50px;
     padding-bottom: 30px;

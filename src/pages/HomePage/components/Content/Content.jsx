@@ -25,6 +25,7 @@ const settings = {
 const Content = () => {
   const [t, i18next] = useTranslation();
   const [videoModal, setVideoModal] = useState(false);
+  const [linkId, setLinkId] = useState();
 
   function handleVideoModal() {
     setVideoModal(!videoModal);
@@ -36,6 +37,15 @@ const Content = () => {
     axios
       .get(BASE_URL + "workers")
       .then((res) => setWorker(res.data.data))
+      .catch((err) => console.log(err));
+  }, []);
+
+  const [youtube, setYoutube] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(BASE_URL + `workers/${linkId}`)
+      .then((res) => setYoutube(res.data.data))
       .catch((err) => console.log(err));
   }, []);
 
@@ -58,12 +68,23 @@ const Content = () => {
             <div className="container">
               <h2 className="content-name">
                 {evt.name}
-                <p className="content-span"> {evt[`position_${i18next.language}`]}</p>
+                <p className="content-span">
+                  {" "}
+                  {evt[`position_${i18next.language}`]}
+                </p>
               </h2>
-              <p className="content-text">{evt[`description_${i18next.language}`]}</p>
+              <p className="content-text">
+                {evt[`description_${i18next.language}`]}
+              </p>
 
               <div className="content-list">
-                <button onClick={handleVideoModal} className="content-btn">
+                <button
+                  onClick={() => {
+                    handleVideoModal();
+                    setLinkId(evt?.id);
+                  }}
+                  className="content-btn"
+                >
                   <span className="content-img-span">
                     <Audio />
                   </span>
@@ -91,7 +112,7 @@ const Content = () => {
           {!!videoModal && (
             <iframe
               className="content-video-modal"
-              src="https://www.youtube.com/embed/ZM4sJ5cZdG0"
+              src={`https://www.youtube.com/embed/${youtube.video_url}`}
               title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

@@ -169,6 +169,8 @@ span {
 .section-pic {
   padding-left: 10px;
   padding-top: 9px;
+  width: 210px;
+  border-radius: 10px;
 }
 
 .section-page {

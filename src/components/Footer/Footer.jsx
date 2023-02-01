@@ -53,7 +53,7 @@ const Footer = () => {
             <h3 className="footer-name">{t("company")}</h3>
             <ul className="footer--list">
               <li className="footer-item">
-                <Link to="enterprice" className="footer-link">
+                <Link onClick={() => window.scrollTo({ top: 500 })} to="/" className="footer-link">
                   {t(`head3`)}
                 </Link>
               </li>
@@ -73,7 +73,7 @@ const Footer = () => {
               </li>
               <li className="footer-item">
                 <Link
-                  onClick={() => window.scrollTo({ top: 5300 })}
+                  onClick={() => window.scrollTo({ top: 4800 })}
                   to="/"
                   className="footer-link"
                 >

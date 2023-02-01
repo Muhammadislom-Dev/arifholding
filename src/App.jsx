@@ -1,4 +1,3 @@
-import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
 import Redirect from "./Redirect";

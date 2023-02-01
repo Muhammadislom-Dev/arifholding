@@ -80,13 +80,12 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="navbar-item">
-              <Link
-                onClick={() => window.scrollTo({ top: 6300 })}
+              <a href="#communication"
                 className={navbar ? "active" : "navbar-links"}
                 to="/"
               >
                 {t(`head4`)}
-              </Link>
+              </a>
             </li>
             <li className="navbar-item">
               <Languages />
