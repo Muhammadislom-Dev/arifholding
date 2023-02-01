@@ -745,4 +745,7 @@
     font-size: 12px;
     padding: 11px 28px;
   }
+  .header .header-list{
+    margin-left: 15px;
+  }
 }

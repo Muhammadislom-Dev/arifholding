@@ -1,7 +1,6 @@
 import React from "react";
 import "./Sublime.css";
 import download from "../../../../assets/img/download.png";
-import busines from "../../../../assets/img/busines.png";
 import dot from "../../../../assets/img/div.png";
 import { useParams } from "react-router-dom";
 import axios from "axios";
