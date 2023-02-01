@@ -94,7 +94,7 @@ const Meeting = () => {
       <div className="meeting-box">
         <OwlCarousel {...options}>
           <div className="meeting-list">
-            <img src={meetings} alt="" className="meeting-img" />
+            <imgsrc={`${BASE_URL}uploads/images/${about?.images}`}  alt="" className="meeting-img" />
           </div>
         </OwlCarousel>
       </div>
