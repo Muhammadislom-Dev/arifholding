@@ -53,7 +53,6 @@ const Meeting = () => {
       .catch((err) => console.log(err));
   }, []);
 
-  console.log(about.images);
 
   return (
     <>
@@ -92,7 +91,9 @@ const Meeting = () => {
         <OwlCarousel {...options}>
           <div className="meeting-list">
             <img
-              src={`${BASE_URL}uploads/images/${about?.images[0]}`}
+              src={`${BASE_URL}uploads/images/${
+                !!about?.images && about?.images
+              }`}
               alt=""
               className="meeting-img"
             />
@@ -110,7 +111,7 @@ const Meeting = () => {
           {!!videoModal && (
             <iframe
               className="content-video-modal"
-              src={`https://www.youtube.com/embed/${about.video_url}`}
+              src={`https://www.youtube.com/embed/${about?.video_url}`}
               title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

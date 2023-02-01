@@ -75,7 +75,7 @@ const Sublime = () => {
                 </p>
                 <spam className="sublime-spans">
                   {" "}
-                  {news?.createdAt.slice(0, 10)}
+                  {!! news?.createdAt && news?.createdAt.slice(0, 10)}
                 </spam>
               </div>
             ))}
