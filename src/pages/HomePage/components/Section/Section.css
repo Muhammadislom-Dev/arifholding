@@ -17,6 +17,7 @@
 .section-img {
   width: 320px;
   height: 220px;
+  object-fit: cover;
 }
 
 .section-list {
