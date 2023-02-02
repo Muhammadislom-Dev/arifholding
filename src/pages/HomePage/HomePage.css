@@ -726,7 +726,7 @@
   }
 
   .content .content-imgs {
-    height: 600px;
+    height: 500px;
   }
 
   .content .content-btn {
@@ -804,8 +804,12 @@
   body .App .service .service__pics {
     margin-top: 18px;
   }
-
-  
+  .App .content .container{
+    top: 8%;
+  }
+  .content .content-imgs{
+    height: 450px;
+  }
 }
 
 @media (max-width: 400px) {
@@ -833,5 +837,16 @@
 
   .slider .slider-list {
     height: 200px;
+  }
+
+  .App .content .container{
+    top: 8%;
+  }
+  .content .content-imgs{
+    height: 420px;
+    object-fit: initial;
+  }
+  .content .content-list{
+    margin-top: 35px;
   }
 }
