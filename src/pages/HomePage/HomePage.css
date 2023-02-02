@@ -4,6 +4,18 @@
   background-repeat: no-repeat;
 }
 
+@media (max-width: 2000px) {
+  .App .navbar {
+    bottom: 94%;
+  }
+}
+
+@media (max-width: 1800px) {
+  .App .navbar {
+    bottom: 89%;
+  }
+}
+
 @media (max-width: 1440px) {
   .container {
     width: 100%;
@@ -11,6 +23,10 @@
 
   .App .category .container {
     width: 100%;
+  }
+
+  .App .about .container {
+    left: -20%;
   }
 
   .service .service-list {
@@ -58,10 +74,6 @@
 
   .section .section-names {
     margin-left: 120px;
-  }
-
-  .about {
-    padding-left: 80px;
   }
 
   .slider .slider-list {
@@ -260,9 +272,6 @@
   .section .section-item {
     padding-left: 20px;
   }
-  .App .about {
-    padding-bottom: 80px;
-  }
 
   .App .form {
     padding: 30px;
@@ -313,7 +322,6 @@
   .about .about-name {
     font-size: 36px;
     line-height: 40px;
-    width: 100%;
   }
 
   .section .section-text {
@@ -395,6 +403,16 @@
   }
   body .header-input {
     width: 70%;
+  }
+
+  .App .about .about-imgs {
+    height: 700px;
+    object-fit: cover;
+  }
+
+  .content .content-imgs {
+    height: 700px;
+    object-fit: initial;
   }
 }
 
@@ -503,6 +521,10 @@
   .service__img {
     padding-left: 130px;
   }
+
+  .App .about .container {
+    left: -7%;
+  }
 }
 
 @media (max-width: 490px) {
@@ -545,16 +567,30 @@
     margin-left: 0;
   }
 
-  .App .about {
-    padding-left: 15px;
-    padding-top: 50px;
-  }
   .about .about-name {
     font-size: 27px;
     line-height: 35px;
+    width: 300px;
+  }
+
+  .about-img {
+    width: 120px;
+  }
+
+  .about-subname {
+    margin-left: 25px;
+  }
+
+  .about .about-title {
+    margin-left: 15px;
   }
   .about .about-text {
-    width: 100%;
+    width: 85%;
+    margin-left: 60px;
+  }
+
+  .about .about-item-link {
+    margin-left: -130px;
   }
 
   .App .form {
@@ -804,10 +840,10 @@
   body .App .service .service__pics {
     margin-top: 18px;
   }
-  .App .content .container{
+  .App .content .container {
     top: 8%;
   }
-  .content .content-imgs{
+  .content .content-imgs {
     height: 450px;
   }
 }
@@ -839,14 +875,33 @@
     height: 200px;
   }
 
-  .App .content .container{
+  .App .content .container {
     top: 8%;
   }
-  .content .content-imgs{
-    height: 420px;
-    object-fit: initial;
+  .content .content-imgs {
+    height: 500px;
+    object-fit: cover;
+    background: linear-gradient(
+      270deg,
+      #000000 0%,
+      rgba(0, 0, 0, 0) 79.96%,
+      rgba(0, 0, 0, 0.52) 100%
+    );
   }
-  .content .content-list{
+  .content .content-list {
     margin-top: 35px;
+  }
+
+  .about .about-text {
+    width: 85%;
+    margin-left: 30px;
+  }
+
+  .about .about-item-link {
+    margin-left: -130px;
+  }
+
+  .App .meeting .meeting-button {
+    top: 67%;
   }
 }
